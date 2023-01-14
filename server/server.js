@@ -13,14 +13,16 @@ const fs = require('fs');
 const PORT = process.env.PORT || 3030;
 
 
-//importing the /videos route data
+//importing the /routes route data
 const warehouseRoute = require('./routes/warehouse')
+const inventoryRoute = require('./routes/inventory')
 
 
 
 //Middleware:
 app.use(express.json());
 app.use('/warehouse', warehouseRoute)
+app.use('/inventory', inventoryRoute)
 
 
 
