@@ -1,0 +1,51 @@
+[
+    {
+        "id":"3u983u219c201",
+        "WarehouseName":"Warehouse1",
+        "address":"123 St",
+        "city":"Vancouver",
+        "country":"CAN",
+        "contact-info": {
+            "name":"Leonardo Nascimento",
+            "position":"Project Manager",
+            "phone":"1234567890",
+            "email":"snasc.leonardo@gmail.com"
+        },
+        "inventory":[{
+                "item":"apple",
+                "category":"fruit",
+                "quantity": 2
+            },
+            {
+                "item":"television",
+                "category":"electronics",
+                "quantity": 50
+            }
+        ]
+    },
+    {
+        "id":"du9sadua0d8a0",
+        "WarehouseName":"Warehouse2",
+        "address":"456 street",
+        "city":"Arizona",
+        "country":"USA",
+        "contact-info": {
+            "name":"Amandeep Kaur",
+            "position":"Freelancer",
+            "phone":"1234567890",
+            "email":"amandeep@gmail.com"
+        },
+        "inventory":[
+            {
+                "item":"apple",
+                "category":"fruit",
+                "quantity": 2
+            },
+            {
+                "item":"television",
+                "category":"electronics",
+                "quantity": 50
+            }
+        ]
+    }
+]
