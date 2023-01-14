@@ -34,13 +34,17 @@ function requestedID (req) {
 
 function getInventoryInfo(id) {
 
-    const arr = []
+    let arr = []
     const data = readInventory()
     data.forEach(element => {
         if(element.id === id) {
             arr.push(element)
         }
     });
+
+    if(arr.length === 0) {
+        return false
+    }
 
     return arr
 }
