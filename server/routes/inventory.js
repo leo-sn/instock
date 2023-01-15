@@ -32,31 +32,21 @@ function requestedID (req) {
     return requestId = req.params.id
 }
 
-//get all inventory for specific warehouse
-function getInventoryFromWarehouse(id) {
-    const arr = []
+function getInventoryInfo(id) {
+
+    let arr = []
     const data = readInventory()
     data.forEach(element => {
-        if(element.warehouseID === id) {
-            const obj = {
-                itemId: element.id,
-                itemName: element.itemName,
-                itemCategory: element.category,
-                itemStatus: element.status,
-                itemQuantity: element.quantity
-            }
-            arr.push(obj)
+        if(element.id === id) {
+            arr.push(element)
         }
     });
-    
+
+    if(arr.length === 0) {
+        return false
+    }
+
     return arr
-}
-
-function getWarehouseInfo(warehouseId) {
-   const warehouseData = readWarehouse();
-   const result = warehouseData.find( ({id}) => id === warehouseId)
-
-   return result
 }
 
 
@@ -65,25 +55,22 @@ function getWarehouseInfo(warehouseId) {
 //*****  REQUESTS  *****//
 //**********************//
 
-
 router.get('/', (_req, res) => {
-    const warehouseData = readWarehouse();
-    res.status(200).send(warehouseData)
+    const inventoryData = readInventory();
+    res.status(200).send(inventoryData)
 })
 
 
 router.get('/:id', (req, res) => {
     
-    const warehouseInfo = getWarehouseInfo(requestedID(req))
+    const inventoryInfo = getInventoryInfo(requestedID(req))
 
-    if(!warehouseInfo) {
-        return res.status(400).send('Warehouse ID must be valid')
+    if(!inventoryInfo) {
+        return res.status(400).send('Item ID must be valid')
     }
-
-    const inventory = getInventoryFromWarehouse(requestedID(req));
-    const data = {...warehouseInfo, inventory}
-    res.status(200).json(data)
+    res.status(200).json(inventoryInfo)
 })
+
 
 //EXPORTING
 module.exports = router; // exporting this route
