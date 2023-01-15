@@ -1,5 +1,11 @@
+import Header from "../../components/Warehouse/Header/Header";
+
 function Warehouse() {
-	return <></>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 }
 
 export default Warehouse;
