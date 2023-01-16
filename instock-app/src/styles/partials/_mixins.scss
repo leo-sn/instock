@@ -1,0 +1,31 @@
+@import "./breakpoints";
+
+@mixin mobile {
+	@media (min-width: map-get($breakpoints, "mobile")) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: map-get($breakpoints,"tablet")) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: map-get($breakpoints, "desktop")) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: map-get($breakpoints,"xl")) {
+		@content;
+	}
+}
+
+@mixin breakpoint($bp: 0) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}
