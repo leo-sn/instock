@@ -1,0 +1,55 @@
+@import "../../../../App.scss";
+
+.search {
+	color: $Instock-Black;
+	font-family: "Titillium Web";
+	position: absolute;
+	width: 150px;
+	height: 36px;
+	left: 25px;
+	font-size: 28px;
+	line-height: 36px;
+
+	&__input {
+		font-family: "Titillium Web";
+		padding-left: 16px;
+		font-size: 13px;
+		color: $Slate;
+		background-color: $White;
+		box-sizing: border-box;
+		position: absolute;
+		width: 295px;
+		height: 36px;
+		left: 25px;
+		top: 75px;
+		border: 1px solid $Cloud;
+		border-radius: 20px;
+	}
+
+	&__button--add {
+		border: 1px solid $Instock-Indigo;
+		border-radius: 20px;
+		width: 295px;
+		height: 36px;
+		font-family: "Titillium Web";
+		font-weight: 600;
+		font-size: 13px;
+		line-height: 20px;
+		color: $White;
+		flex: none;
+		order: 0;
+		flex-grow: 0;
+		background: $Instock-Indigo;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 8px 84px;
+		gap: 10px;
+		position: absolute;
+		width: 295px;
+		height: 36px;
+		left: 25px;
+		top: 130px;
+	}
+}
