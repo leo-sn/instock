@@ -36,6 +36,7 @@
 			align-items: center;
 			justify-content: center;
 			border-radius: 20px;
+			text-decoration: none;
 		}
 
 		&__heading--warehouse:hover {
@@ -61,6 +62,7 @@
 			align-items: center;
 			justify-content: center;
 			border-radius: 20px;
+			text-decoration: none;
 		}
 		&__heading--inventory:hover {
 			background-color: $Instock-Black;

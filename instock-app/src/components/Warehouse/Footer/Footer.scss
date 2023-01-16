@@ -1,0 +1,37 @@
+@import "../../../App.scss";
+
+.footer {
+	@include mobile {
+		position: absolute;
+		width: 157px;
+		height: 16px;
+		left: 109px;
+		top: 1740px;
+		font-family: "Titillium Web";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 16px;
+		text-align: center;
+		color: $Slate;
+		padding-bottom: 40px;
+	}
+
+	@include tablet {
+		position: absolute;
+		width: 171px;
+		height: 18px;
+		left: 298px;
+		top: 966px;
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	@include desktop {
+		position: absolute;
+		width: 171px;
+		height: 18px;
+		left: 555px;
+		top: 859px;
+	}
+}
