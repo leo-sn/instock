@@ -1,10 +1,12 @@
-import Inventory_page from "../../components/Inventory_page/Inventory_page.js";
-import Add_new_inventory_item from "../../components/Add_new_inventory_item/Add_new_inventory_item.js";
+import InventoryPage from "../../components/InventoryPage/InventoryPage.js";
+import Footer from "../../components/Warehouse/Footer/Footer.js";
+import Header from "../../components/Warehouse/Header/Header.js";
 function Inventory() {
   return (
     <>
-      <Inventory_page />
-      <Add_new_inventory_item />
+      <Header />
+      <InventoryPage />
+      <Footer />
     </>
   );
 }
