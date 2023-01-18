@@ -4,6 +4,8 @@ const router = express.Router(); // using routing to the server.js
 const fs = require('fs');
 const warehousesJSON = './data/warehouses.json'
 const inventoryJSON = './data/inventories.json'
+const cors = require('cors');
+app.use(cors())
 
 //unique id:
 const uniqid = require('uniqid');
@@ -78,13 +80,16 @@ function writeWarehouse(data) {
 //Creating new Warehouse in the databse
 function createNewWarehouse(data) {
 
+    const { name, address, city, country } = data;
+    
+
     //Creating data obj
     const newWhse = {
         "id": uniqid(), //ADD NEW ID using uniqid library.
-        "name": data.name,
-        "address": data.address,
-        "city": data.city,
-        "country": data.country,
+        "name": name,
+        "address": address,
+        "city": city,
+        "country": country,
         "contact": {
             "name": data.contact.name,
             "position": data.contact.position,

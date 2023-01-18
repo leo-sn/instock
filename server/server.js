@@ -2,8 +2,8 @@
 const express = require('express');
 const app = express();
 //solving CORS:
-// const cors = require('cors');
-// app.use(cors())
+const cors = require('cors');
+app.use(cors())
 //unique id:
 // const uniqid = require('uniqid');
 //reading/writting files
