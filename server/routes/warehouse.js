@@ -5,6 +5,9 @@ const fs = require('fs');
 const warehousesJSON = './data/warehouses.json'
 const inventoryJSON = './data/inventories.json'
 
+//unique id:
+const uniqid = require('uniqid');
+
 //MIDDLEWARE
 app.use(express.json());
 
@@ -59,19 +62,53 @@ function getWarehouseInfo(warehouseId) {
    return result
 }
 
+function writeWarehouse(data) {
+
+    const newWarehouseData = (data);
+    const oldWarehouseData = readWarehouse()
+
+    console.log(oldWarehouseData)
+
+    const toWrite = [...oldWarehouseData, newWarehouseData]
+    fs.writeFileSync('./data/warehouses.json', JSON.stringify(toWrite))
+
+}
+
+
+//Creating new Warehouse in the databse
+function createNewWarehouse(data) {
+
+    //Creating data obj
+    const newWhse = {
+        "id": uniqid(), //ADD NEW ID using uniqid library.
+        "name": data.name,
+        "address": data.address,
+        "city": data.city,
+        "country": data.country,
+        "contact": {
+            "name": data.contact.name,
+            "position": data.contact.position,
+            "phone": data.contact.phone,
+            "email": data.contact.email
+        }
+    };
+
+    //Writing new videos on database
+    writeWarehouse(newWhse)
+}
 
 
 //**********************//
 //*****  REQUESTS  *****//
 //**********************//
 
-
+//GET request to get all warehouses DATA
 router.get('/', (_req, res) => {
     const warehouseData = readWarehouse();
     res.status(200).send(warehouseData)
 })
 
-
+//GET request to get specific warehouse data + inventory
 router.get('/:id', (req, res) => {
     
     const warehouseInfo = getWarehouseInfo(requestedID(req))
@@ -83,6 +120,19 @@ router.get('/:id', (req, res) => {
     const inventory = getInventoryFromWarehouse(requestedID(req));
     const data = {...warehouseInfo, inventory}
     res.status(200).json(data)
+})
+
+//POST request handler to create a new warehouse
+router.post('/',(req,res) => {
+
+    createNewWarehouse(req.body);
+
+    // if(!createNewWarehouse) {
+    //     return res.status(400).send('Information required not match!')
+    // }
+
+    res.status(200).send('Warehouse created successfully!')
+
 })
 
 //EXPORTING
