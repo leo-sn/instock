@@ -1,20 +1,17 @@
+import "../ListComponent/ListComponent.scss";
+import ListComponent from "../ListComponent/ListComponent.js";
+import { useState, useEffect } from "react";
+import inventory_listitems from "../../assets/datatest/inventories.json";
+
 function InventoryPage() {
+  const [listitems, setListitems] = useState([]);
+  console.log(inventory_listitems);
   return (
-    <div className="inventory_page_top">
-      <h2 className="inventory_page_top__title">Inventory</h2>
-      <input
-        type="text"
-        name="search"
-        placeholder="Search"
-        className="inventory_page_top__search"
-      ></input>
-      <input
-        type="submit"
-        name="button"
-        className="inventory_page_top__addbutton"
-        placeholder="Add New Item"
-      ></input>
-    </div>
+    <>
+      <div className="page_box">
+        <ListComponent listitems={listitems} />
+      </div>
+    </>
   );
 }
 export default InventoryPage;
