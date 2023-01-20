@@ -101,12 +101,12 @@
   },
   {
     "id": "7c79d334-6b90-4052-9def-aa9b8519c9fb",
-    "warehouseID": "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
-    "warehouseName": "Washington",
-    "itemName": "Monitor",
-    "description": "A 32\" IPS LED ultrawide monitor, perfect for work or gaming.",
-    "category": "Electronics",
-    "status": "Out of Stock",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Confortismo LEOOOOO Ultimate version33333",
+    "description": "A simple 100% cotton pillow, this is an essential piece for any house.",
+    "category": "Pillow",
+    "status": "In Stock",
     "quantity": 0
   },
   {
@@ -233,11 +233,11 @@
     "id": "4d6ce289-eb58-45a1-bae3-e3874290ee48",
     "warehouseID": "90ac3319-70d1-4a51-b91d-ba6c2464408c",
     "warehouseName": "Jersey",
-    "itemName": "Keychain",
-    "description": "Made from 100% genuine leather, this keychain will keep your keys organized while keeping a classic, professional look.",
+    "itemName": "TESTINNNNGGGG",
+    "description": "LEOOOOOOOO from 100% genuine leather, this keychain will keep your keys organized while keeping a classic, professional look.",
     "category": "Accessories",
-    "status": "Out of Stock",
-    "quantity": 0
+    "status": "In Stock",
+    "quantity": 300
   },
   {
     "id": "d3c08f85-4570-48e1-88df-610614477359",
@@ -698,5 +698,25 @@
     "category": "Health",
     "status": "Out of Stock",
     "quantity": 0
+  },
+  {
+    "id": "gjsuiu10f3ld3mkgqw",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Confortismo Pillow",
+    "description": "A simple 100% cotton pillow, this is an essential piece for any house.",
+    "category": "Pillow",
+    "status": "In Stock",
+    "quantity": 0
+  },
+  {
+    "id": "gjsuiu10gvld3mlh6o",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Confortismo Pillow",
+    "description": "A simple 100% cotton pillow, this is an essential piece for any house.",
+    "category": "Pillow",
+    "status": "In Stock",
+    "quantity": 3
   }
 ]
