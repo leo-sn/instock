@@ -1,0 +1,15 @@
+@import "../../App.scss";
+
+.inventory_listitem {
+  @include mobile {
+    font-family: "titillium web";
+    height: 30vh;
+    width: 80vh;
+    background-color: #fff;
+    border-bottom: 2px solid #bdc5d5;
+  }
+  @include tablet {
+  }
+  @include desktop {
+  }
+}
