@@ -93,6 +93,33 @@ function createNewInventoryItem(data) {
     writeInventoryItem(newItem)
 }
 
+function updateInventoryItem(data, idToUpdate) {
+
+    const database = readInventory();
+
+    database.find((element, index) => {
+
+        if(element.id === idToUpdate) {
+
+            database[index] = 
+            {
+                id: idToUpdate,
+                warehouseID: getWarehouseIdByName(data.warehouseName),
+                warehouseName: data.warehouseName,
+                itemName: data.itemName,
+                description: data.description,
+                category: data.category,
+                status: data.status,
+                quantity: data.quantity
+            }      
+
+            const newInventoryData = database;
+            const toWrite = newInventoryData
+            fs.writeFileSync('./data/inventories.json', JSON.stringify(toWrite))
+        }
+    })
+}
+
 
 //**********************//
 //*****  REQUESTS  *****//
@@ -117,9 +144,13 @@ router.get('/:id', (req, res) => {
 router.post('/',(req,res) => {
 
     createNewInventoryItem(req.body);
-
     res.status(200).send('Item added to inventory successfully!')
 
+})
+
+router.put('/:id',(req,res) => {
+    updateInventoryItem(req.body, requestedID(req))
+    res.status(200).send('Item updated successfully!')
 })
 
 //EXPORTING
