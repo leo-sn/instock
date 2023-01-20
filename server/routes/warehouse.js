@@ -102,7 +102,6 @@ function createNewWarehouse(data) {
     writeWarehouse(newWhse)
 }
 
-
 //**********************//
 //*****  REQUESTS  *****//
 //**********************//
@@ -131,10 +130,6 @@ router.get('/:id', (req, res) => {
 router.post('/',(req,res) => {
 
     createNewWarehouse(req.body);
-
-    // if(!createNewWarehouse) {
-    //     return res.status(400).send('Information required not match!')
-    // }
 
     res.status(200).send('Warehouse created successfully!')
 

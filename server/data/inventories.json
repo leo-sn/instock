@@ -698,5 +698,25 @@
     "category": "Health",
     "status": "Out of Stock",
     "quantity": 0
+  },
+  {
+    "id": "gjsuiu10f3ld3mkgqw",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Confortismo Pillow",
+    "description": "A simple 100% cotton pillow, this is an essential piece for any house.",
+    "category": "Pillow",
+    "status": "In Stock",
+    "quantity": 0
+  },
+  {
+    "id": "gjsuiu10gvld3mlh6o",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Confortismo Pillow",
+    "description": "A simple 100% cotton pillow, this is an essential piece for any house.",
+    "category": "Pillow",
+    "status": "In Stock",
+    "quantity": 3
   }
 ]
