@@ -116,7 +116,8 @@ function updateInventoryItem(data, idToUpdate) {
             const newInventoryData = database;
             const toWrite = newInventoryData
             fs.writeFileSync('./data/inventories.json', JSON.stringify(toWrite))
-        }
+
+        } 
     })
 }
 
@@ -149,8 +150,14 @@ router.post('/',(req,res) => {
 })
 
 router.put('/:id',(req,res) => {
-    updateInventoryItem(req.body, requestedID(req))
-    res.status(200).send('Item updated successfully!')
+
+    if(getInventoryInfo(requestedID(req))){
+        updateInventoryItem(req.body, requestedID(req))
+        return res.status(200).send('Item updated successfully!')
+    } else {
+        res.status(400).send('Inventory item does not exist.')
+    }
+    
 })
 
 //EXPORTING
