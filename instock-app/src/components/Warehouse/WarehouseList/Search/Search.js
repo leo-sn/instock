@@ -1,16 +1,17 @@
-import "../Search/Search.scss";
+import "./Search.scss";
+import { useParams } from "react-router";
 
-function Search() {
+function Search(props) {
 	return (
 		<>
-			<h2 className="search">Warehouses</h2>
+			<h2 className="search">{props.title}</h2>
 			<form>
 				<input
 					className="search__input"
 					placeholder="Search..."
 				></input>
 				<button className="search__button--add">
-					Add New Warehouse
+					+ Add New Warehouse
 				</button>
 			</form>
 		</>

@@ -3,7 +3,7 @@
 .warehouse-list {
 	@include mobile {
 		width: 343px;
-		height: 1575px;
+		height: 1680px;
 		position: absolute;
 		left: 16px;
 		top: 136px;
@@ -11,11 +11,96 @@
 		border-radius: 3px;
 		background-color: $White;
 
+		link {
+			text-decoration: none;
+		}
+
+		&__heading-div {
+			display: none;
+		}
+
 		&__div {
-			position: absolute;
-			width: 343px;
-			height: 1px;
+			position: relative;
 			top: 180px;
+		}
+
+		&__list {
+			font-family: "Titillium Web";
+			display: flex;
+			gap: 50px;
+			margin-left: 20px;
+		}
+
+		&__sub-heading {
+			font-family: "Titillium Web";
+			font-style: normal;
+			font-weight: 600;
+			color: $Slate;
+			font-size: 11px;
+			margin-bottom: 5px;
+			margin-top: 8px;
+		}
+
+		&__address {
+			width: 120px;
+			margin-top: 0px;
+		}
+
+		&__sub-data {
+			font-family: "Titillium Web";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 20px;
+			color: $Instock-Black;
+			margin-top: 0px;
+		}
+
+		&__email {
+			margin-top: 0px;
+		}
+
+		&__contact {
+			margin-bottom: 0px;
+			margin-top: 0px;
+		}
+
+		&__name {
+			margin-bottom: 12px;
+			color: $Instock-Indigo;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 20px;
+		}
+
+		&__right-arrow {
+			margin-top: -12px;
+		}
+
+		&__link {
+			display: flex;
+		}
+
+		&__address-heading {
+			margin-top: 0px;
+		}
+
+		&__contact-name {
+			margin-bottom: 12px;
+			color: $Instock-Indigo;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 20px;
+		}
+
+		&-buttons {
+			display: flex;
+		}
+
+		&__buttons-heading {
+			display: none;
 		}
 	}
 	@include tablet {
@@ -24,6 +109,31 @@
 		position: absolute;
 		top: 92px;
 		left: 32px;
+
+		&__div {
+			position: relative;
+			top: 260px;
+		}
+
+		&__buttons-heading {
+			display: inherit;
+		}
+
+		&__warehouse-heading {
+			// position: absolute;
+			// left: 64px;
+			// bottom: 200px;
+			color: green;
+		}
+
+		&__heading-div {
+			display: inherit;
+			background-color: gray;
+			position: absolute;
+			width: 704px;
+			height: 40px;
+			top: 95px;
+		}
 	}
 
 	@include desktop {
