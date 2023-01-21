@@ -4,6 +4,7 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 import Inventory from "./pages/Inventory/Inventory";
 import WarehouseDetails from "./pages/Warehouse/WarehouseDetails";
 import { useParams } from "react-router-dom";
+import DetailInventoryItem from "./components/DetailInventoryItem/DetailInventoryItem";
 
 function App() {
 	const { title } = useParams();
@@ -28,7 +29,7 @@ function App() {
 					/>
 					<Route
 						path="/warehouse/:warehouseId/inventory/:inventoryId"
-						element={<WarehouseDetails />}
+						element={<DetailInventoryItem />}
 					/>
 
 					<Route path="/inventory" element={<Inventory />} />
