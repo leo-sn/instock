@@ -2,24 +2,20 @@ import "../ListComponent/ListComponent.scss";
 import { Link } from "react-router-dom";
 import del from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
-import "../ListComponent/ListComponent.scss";
 
 function InventoryListComponent(props) {
-  console.log(props.listitems);
-  // const inv=props.listitems.map((i)=>{
-
-  // })
-
-  //*********** TESTING INVENTORY DATA ****/
-  // props.listitems.map((i) => {
-  //   console.log("INVENTORY ITEM " + i.itemName); //INVENTORY ITEM
-  //   console.log("CATEGORY " + i.category); //CATEGORY
-  //   console.log("STATUS " + i.status); //STATUS
-  //   console.log("QTY " + i.quantity); //QTY
-  //   console.log("WAREHOUSE " + i.warehouseName); //WAREHOUSE
-  // });
-  const itemname = "some inventory item name" + ">";
-  console.log({ itemname });
+  //console.log(props.listitems);
+  const inv_td = props.listitems.map((i) => {
+    return (
+      <div key={i.id} className="inventory_listitem_td__text">
+        <p>{i.itemName}</p>
+        <p>{i.category}</p>
+        <p>{i.status}</p>
+        <p>{i.quantity}</p>
+        <p>{i.warehouseName}</p>
+      </div>
+    );
+  });
 
   //1. add delete function
   function deleteInventoryItem(id) {
@@ -41,14 +37,7 @@ function InventoryListComponent(props) {
           <p>QTY</p>
           <p>WAREHOUSE</p>
         </div>
-        <div className="inventory_listitem_td__text">
-          <p>Placeholder1_inventoryitemname</p>
-          <p>Placeholder1_categoryname</p>
-          <p>Placeholder1_statusname</p>
-          <p>Placeholder1_qtyname</p>
-          <p>Placeholder1_warehousename</p>
-        </div>
-
+        {inv_td}
         <div className="inventory_listitem_td__actionButtons">
           <a
             onClick={() => {
@@ -82,7 +71,7 @@ function InventoryListComponent(props) {
               INVENTORY ITEM
             </h4>
             <h3 className="inventory_listitem__textpair1--lowertext">
-              {itemname}
+              someitemname
             </h3>
           </div>
           <div className="inventory_listitem__textpair2">
