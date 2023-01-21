@@ -1,9 +1,14 @@
 import "../DeleteButton/DeleteButton.scss";
 
-function DeleteButton() {
+function DeleteButton(props) {
+	// console.log(props);
+
 	return (
 		<div>
-			<button className="warehouse-button--delete"></button>
+			<button
+				// onClick={props.deleteWarehouse}
+				className="warehouse-button--delete"
+			></button>
 		</div>
 	);
 }

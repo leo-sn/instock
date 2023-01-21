@@ -15,6 +15,10 @@
 			text-decoration: none;
 		}
 
+		&-headings {
+			display: none;
+		}
+
 		&__heading-div {
 			display: none;
 		}
@@ -110,26 +114,85 @@
 		top: 92px;
 		left: 32px;
 
+		&__right-arrow {
+			margin-top: -3px;
+			// margin-
+			margin-left: 10px;
+		}
+		&__link {
+			display: flex;
+			gap: 10px;
+		}
+
 		&__div {
 			position: relative;
-			top: 260px;
+			top: 105px;
+		}
+
+		&-buttons {
+			display: flex;
+			gap: 0px;
+		}
+
+		&-headings {
+			display: inherit;
+			position: absolute;
+			width: 704px;
+			height: 40px;
+			top: 95px;
+			left: 32px;
+			display: flex;
+			gap: 65px;
+			font-family: "Titillium Web";
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+			// color: $Indigo-Black;
 		}
 
 		&__buttons-heading {
 			display: inherit;
 		}
 
-		&__warehouse-heading {
-			// position: absolute;
-			// left: 64px;
-			// bottom: 200px;
-			color: green;
+		&__name {
+			position: absolute;
+			left: 32px;
+		}
+
+		&__contact-name {
+			position: absolute;
+			left: 280px;
+			color: $Slate;
+		}
+
+		&__address {
+			position: absolute;
+			left: 165px;
+			top: 10px;
+			width: 87px;
+			height: 44px;
+		}
+
+		&__email {
+			position: absolute;
+			left: 428px;
+			top: 30px;
+		}
+
+		&__contact {
+			position: absolute;
+			left: 428px;
+		}
+
+		&__sub-heading {
+			display: none;
 		}
 
 		&__heading-div {
 			display: inherit;
-			background-color: gray;
-			position: absolute;
+			background: rgba(246, 247, 249, 0.5);
+			position: relative;
 			width: 704px;
 			height: 40px;
 			top: 95px;

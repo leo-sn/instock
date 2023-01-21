@@ -5,10 +5,11 @@ import Inventory from "./pages/Inventory/Inventory";
 import WarehouseDetails from "./pages/Warehouse/WarehouseDetails";
 import { useParams } from "react-router-dom";
 import DetailInventoryItem from "./components/DetailInventoryItem/DetailInventoryItem";
+import WarehouseEdit from "./pages/Warehouse/WarehouseEdit";
+import WarehouseDelete from "./pages/Warehouse/WarehouseDelete";
 
 function App() {
 	const { title } = useParams();
-	console.log(title);
 	let current_title;
 	if (title === undefined) {
 		current_title = "Warehouses";
@@ -31,6 +32,16 @@ function App() {
 						path="/warehouse/:warehouseId/inventory/:inventoryId"
 						element={<DetailInventoryItem />}
 					/>
+
+					<Route
+						path="/warehouse/:warehouseId/edit"
+						element={<WarehouseEdit />}
+					/>
+
+					<Route
+						path="/warehouse/:warehouseId/delete"
+						element={<WarehouseDelete />}
+					></Route>
 
 					<Route path="/inventory" element={<Inventory />} />
 				</Routes>
