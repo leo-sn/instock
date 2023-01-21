@@ -7,35 +7,35 @@ import { useParams } from "react-router-dom";
 import DetailInventoryItem from "./components/DetailInventoryItem/DetailInventoryItem";
 
 function App() {
-	const { title } = useParams();
-	console.log(title);
-	let current_title;
-	if (title === undefined) {
-		current_title = "Warehouses";
-	} else {
-		current_title = "Inventory";
-	}
-	return (
-		<>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path="/"
-						element={<Warehouse title={current_title} />}
-					/>
-					<Route
-						path="/warehouse/:warehouseId"
-						element={<WarehouseDetails />}
-					/>
-					<Route
-						path="/warehouse/:warehouseId/inventory/:inventoryId"
-						element={<DetailInventoryItem />}
-					/>
+  const { title } = useParams();
+  console.log(title);
+  let current_title;
+  if (title === undefined) {
+    current_title = "Warehouses";
+  } else {
+    current_title = "Inventory";
+  }
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Warehouse title={current_title} />} />
+          <Route
+            path="/warehouse/:warehouseId"
+            element={<WarehouseDetails />}
+          />
+          <Route
+            path="/warehouse/:warehouseId/inventory/:inventoryId"
+            element={<DetailInventoryItem />}
+          />
 
-					<Route path="/inventory" element={<Inventory />} />
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+          <Route
+            path="/inventory"
+            element={<Inventory title={current_title} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 export default App;

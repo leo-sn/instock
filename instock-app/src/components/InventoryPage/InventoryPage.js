@@ -1,10 +1,13 @@
-import "../ListComponent/ListComponent.scss";
+import "../InventoryPage/InventoryPage.scss";
 import ListComponent from "../ListComponent/ListComponent.js";
 import { useState, useEffect } from "react";
 import inventory_listitems from "../../assets/datatest/inventories.json"; //local test data
+import Search from "../Warehouse/WarehouseList/Search/Search.js";
 //import DeleteInventoryItem from "../../components/InventoryDeleteModal/InventoryDeleteModal.js";
 
-function InventoryPage() {
+function InventoryPage(props) {
+  console.log(props);
+  console.log(props.title);
   //1. direct to "Add New Inventory Item" page when user clicks on "+Add New Item" button
 
   //2. set list items from API (test with local test data)
@@ -25,6 +28,7 @@ function InventoryPage() {
   return (
     <>
       <div className="page_box">
+        <Search title={props.title} />
         <ListComponent listitems={listitems} />
         {/* <DeleteInventoryItem deleteitem={delid} /> */}
       </div>
