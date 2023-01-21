@@ -1,15 +1,151 @@
 @import "../../App.scss";
 
-.inventory_listitem {
+.inventory_listitem_td {
+  //only for tablet and desktop hide everything else
   @include mobile {
-    font-family: "titillium web";
-    height: 30vh;
-    width: 80vh;
-    background-color: #fff;
-    border-bottom: 2px solid #bdc5d5;
+    display: none;
   }
   @include tablet {
+    width: 80vw;
+    height: 50vh;
+    border: 2px solid blueviolet;
+    &__text {
+      border: 2px dotted black;
+    }
+    &__actionButtons {
+      border: 2px solid greenyellow;
+    }
   }
   @include desktop {
+    width: 80vw;
+    height: 50vh;
+    &__text {
+      border: 2px dotted black;
+    }
+    &__actionButtons {
+      border: 2px solid greenyellow;
+    }
+  }
+}
+
+.inventory_listitem {
+  //only for mobile view, hide everything else
+
+  @include mobile {
+    font-family: "titillium web";
+    height: 50vh;
+    width: 80vw;
+    background-color: #fff;
+    border-bottom: 0.125rem solid $Cloud;
+    position: relative;
+    &__text {
+      position: relative;
+    }
+    &__textpair1 {
+      position: absolute;
+      border: 2px dotted magenta;
+      top: 5%;
+      left: 5%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Instock-Indigo;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair2 {
+      position: absolute;
+      border: 2px dotted orange;
+      top: 10vh;
+      left: 5%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Green;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair3 {
+      position: absolute;
+      border: 2px dotted violet;
+      top: 5%;
+      left: 40%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 11px;
+        font-weight: 600;
+        color: $Instock-Indigo;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair4 {
+      position: absolute;
+      border: 2px dotted purple;
+      top: 10vh;
+      left: 40%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Instock-Indigo;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair5 {
+      position: absolute;
+      border: 2px dotted magenta;
+      top: 20vh;
+      left: 30%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Instock-Indigo;
+        line-height: 1.25rem;
+      }
+    }
+    &__actionButtons {
+      position: absolute;
+      box-sizing: border-box;
+      top: 40vh;
+      width: 100%;
+      height: 5vh;
+      border: 2px solid blue;
+    }
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: none;
   }
 }
