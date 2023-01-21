@@ -5,6 +5,7 @@ const fs = require('fs');
 const warehousesJSON = './data/warehouses.json'
 const inventoryJSON = './data/inventories.json'
 const cors = require('cors');
+const fsPromise = require('node:fs/promises')
 app.use(cors())
 
 //unique id:
@@ -98,8 +99,90 @@ function createNewWarehouse(data) {
         }
     };
 
-    //Writing new videos on database
+    //Writing new warehouse on database
     writeWarehouse(newWhse)
+}
+
+
+function updateWarehouseData(data, idToUpdate) {
+
+    const database = readWarehouse();
+
+    const { name, address, city, country} = data;
+    console.log(data)
+
+
+    database.find((element, index) => {
+
+        if(element.id === idToUpdate) {
+            database[index] = 
+            {
+                "id": idToUpdate,
+                "name": name,
+                "address": address,
+                "city": city,
+                "country": country,
+                "contact": {
+                    "name": data.contact.name,
+                    "position": data.contact.position,
+                    "phone": data.contact.phone,
+                    "email": data.contact.email
+                }
+            };
+
+            const newWarehouseData = database;
+            const toWrite = newWarehouseData
+            fs.writeFileSync('./data/warehouses.json', JSON.stringify(toWrite))
+        }
+    })
+
+}
+
+function deleteWarehouse(idToDelete) {
+
+    const whseDatabase = readWarehouse();
+    for(i=0; i < whseDatabase.length; i++) {
+        if(whseDatabase[i].id === idToDelete) {
+            whseDatabase.splice(i, 1)
+            break
+        }
+    }
+
+    const inventoryDatabase = readInventory();
+
+    let newInventoryDatabse = inventoryDatabase.filter(e => {
+        if(e.warehouseID !== idToDelete){
+            return true
+        }
+    })
+
+
+    let success = false;
+
+    // This way of writting file garantee that if an erro happens nothing gets overwritten.
+    return fsPromise.writeFile('./data/inventories.json', JSON.stringify(newInventoryDatabse))
+    .then((error) => {
+        console.log('first await')
+        if(error) {
+            return false
+        } else {
+            return fsPromise.writeFile('./data/warehouses.json', JSON.stringify(whseDatabase)).then((error) => {
+                
+                if(error) {
+                    fs.writeFileSync('./data/inventories.json', JSON.stringify(inventoryDatabase))
+
+                } else {
+                    console.log('success worked till here')
+                    success = true
+                    return success
+                }
+            })
+        }}
+    )
+    
+    // This is the simplistic way of writing the file
+    // fs.writeFileSync('./data/inventories.json', JSON.stringify(newInventoryDatabse))
+    // fs.writeFileSync('./data/warehouses.json', JSON.stringify(whseDatabase))
 }
 
 //**********************//
@@ -134,6 +217,36 @@ router.post('/',(req,res) => {
     res.status(200).send('Warehouse created successfully!')
 
 })
+
+//PUT request handler to edit an existing warehouse
+router.put('/:id',(req,res) => {
+
+    if(getWarehouseInfo(requestedID(req))){
+        updateWarehouseData(req.body, requestedID(req))
+        return res.status(200).send('Item updated successfully!')
+    } else {
+        res.status(400).send('Warehouse does not exist!')
+    }
+})
+
+router.delete('/:id',(req,res) => {
+
+    if(getWarehouseInfo(requestedID(req))){
+        deleteWarehouse(requestedID(req)).then((success) => {
+            
+            console.log('route returning: ',success)
+            if(success === true){
+                return res.status(200).send('aaaaaaaaaaand it is gone....!')
+            } else {
+                res.status(400).send('The system fucked up :(');
+            }
+        })
+
+    } else {
+        res.status(400).send('Warehouse does not exist.')
+    }
+})
+
 
 //EXPORTING
 module.exports = router; // exporting this route
