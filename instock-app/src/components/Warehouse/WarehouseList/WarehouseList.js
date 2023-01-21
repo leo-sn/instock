@@ -5,13 +5,31 @@ import { Link } from "react-router-dom";
 import EditButton from "../Buttons/EditButton/EditButton";
 import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import RightArrow from "../../../assets/icons/chevron_right-24px.svg";
+import { useEffect } from "react";
+import axios from "axios";
 
 function WarehouseList(props) {
 	const title = props.title;
+
+	// function deleteWarehouse(id) {
+	// 	console.log(id);
+
+	// 	axios.delete(`http://localhost:3030/warehouse/${id}`).then((res) => {
+	// 		console.log(res);
+	// 	});
+	// }
+
 	return (
 		<>
 			<div className="warehouse-list">
 				<Search title={title} />
+				<div className="warehouse-list-headings">
+					<p>WAREHOUSE</p>
+					<p>ADDRESS</p>
+					<p>CONTACT NAME</p>
+					<p>CONTACT INFORMATION</p>
+					<p>ACTIONS</p>
+				</div>
 				<div className="warehouse-list__heading-div"></div>
 				{props.warehouseList.map((list) => {
 					return (
@@ -64,7 +82,11 @@ function WarehouseList(props) {
 								<p className="warehouse-list__sub-heading  warehouse-list__buttons-heading">
 									ACTIONS
 								</p>
-								<DeleteButton />
+								<DeleteButton
+								// deleteWarehouse={() =>
+								// 	deleteWarehouse(list.id)
+								// }
+								/>
 								<EditButton />
 							</div>
 						</div>
