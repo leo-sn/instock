@@ -89,7 +89,7 @@ function createNewInventoryItem(data) {
         "quantity": data.quantity
     };
 
-    //Writing new videos on database
+    //Writing new inventory on database
     writeInventoryItem(newItem)
 }
 
@@ -121,6 +121,26 @@ function updateInventoryItem(data, idToUpdate) {
     })
 }
 
+function deleteInventoryItem(idToDelete) {
+
+    const database = readInventory();
+    
+    let newInventoryData = database.map(e => {
+        if(e.id !== idToDelete) {
+            return e   
+        }
+    })
+
+    for(i=0; i < database.length; i++){
+        if(database[i].id === idToDelete) {
+            database.splice(i,1)
+            break
+        }
+    }
+
+    fs.writeFileSync('./data/inventories.json', JSON.stringify(newInventoryData))
+
+}
 
 //**********************//
 //*****  REQUESTS  *****//
@@ -159,6 +179,18 @@ router.put('/:id',(req,res) => {
     }
     
 })
+
+
+router.delete('/:id',(req,res) => {
+
+    if(getInventoryInfo(requestedID(req))){
+        deleteInventoryItem(requestedID(req))
+        return res.status(200).send('aaaaaaaaaaand it is gone....!')
+    } else {
+        res.status(400).send('Inventory item does not exist.')
+    }
+})
+
 
 //EXPORTING
 module.exports = router; // exporting this route
