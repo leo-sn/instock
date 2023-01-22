@@ -2,18 +2,66 @@ import "../ListComponent/ListComponent.scss";
 import { Link } from "react-router-dom";
 import del from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
+import "../ListComponent/ListComponent.scss";
 import sort from "../../assets/icons/sort-24px.svg";
-
 function InventoryListComponent(props) {
   //console.log(props.listitems);
+  props.listitems.map((i) => {
+    if (i.status == "In Stock") {
+      console.log("this is instock");
+      console.log(i.id);
+    } else {
+      console.log("this is out of stock");
+      console.log(i.id);
+    }
+  });
+
   const inv_td = props.listitems.map((i) => {
+    if (i.status == "In Stock") {
+      console.log("this is instock");
+      console.log(i.id);
+      var statusclass = "inventory_listitem_td__text--ptagparentstatus green";
+      console.log(statusclass);
+    } else {
+      console.log("this is out of stock");
+      console.log(i.id);
+      var statusclass = "inventory_listitem_td__text--ptagparentstatus red";
+      console.log(statusclass);
+    }
+
     return (
       <div key={i.id} className="inventory_listitem_td__text">
-        <p>{i.itemName}</p>
-        <p>{i.category}</p>
-        <p>{i.status}</p>
-        <p>{i.quantity}</p>
-        <p>{i.warehouseName}</p>
+        <div className="inventory_listitem_td__text--ptagparentbig">
+          <p className="inventory_listitem_td__text--ptagbig">{i.itemName}</p>
+        </div>
+        <div className="inventory_listitem_td__text--ptagparent">
+          <p className="inventory_listitem_td__text--ptag">{i.category}</p>
+        </div>
+        <div className={statusclass}>
+          <p className="inventory_listitem_td__text--ptagstatus">{i.status}</p>
+        </div>
+        <div className="inventory_listitem_td__text--ptagparentsmall">
+          <p className="inventory_listitem_td__text--ptagsmall">{i.quantity}</p>
+        </div>
+        <div className="inventory_listitem_td__text--ptagparentbig">
+          <p className="inventory_listitem_td__text--ptagbig">
+            {i.warehouseName}
+          </p>
+        </div>
+        <div className="inventory_listitem_td__actionButtons">
+          <a className="inventory_listitem_td__actionButtons--deletebutton">
+            <img
+              className="inventory_listitem_td__actionButtons--delete"
+              src={del}
+            ></img>
+          </a>
+          <a className="inventory_listitem_td__actionButtons--editbutton">
+            <img
+              className="inventory_listitem_td__actionButtons--edit"
+              src={edit}
+            ></img>
+          </a>
+        </div>
       </div>
     );
   });
@@ -32,12 +80,12 @@ function InventoryListComponent(props) {
     <>
       <div className="inventory_listitem_td">
         <div className="inventory_listitem_td__texttitle">
-          <div className="inventory_listitem_td__texttitlepair">
+          <div className="inventory_listitem_td__texttitlepairbig">
             <img
               src={sort}
-              className="inventory_listitem_td__texttitlepair--sort"
+              className="inventory_listitem_td__texttitlepairbig--sort"
             ></img>
-            <h4 className="inventory_listitem_td__texttitlepair--title">
+            <h4 className="inventory_listitem_td__texttitlepairbig--title">
               INVENTORY ITEM
             </h4>
           </div>
@@ -60,19 +108,21 @@ function InventoryListComponent(props) {
               STATUS
             </h4>
           </div>
-          <div className="inventory_listitem_td__texttitlepair">
+          <div className="inventory_listitem_td__texttitlepairsmall">
             <img
               src={sort}
-              className="inventory_listitem_td__texttitlepair--sort"
+              className="inventory_listitem_td__texttitlepairsmall--sort"
             ></img>
-            <h4 className="inventory_listitem_td__texttitlepair--title">QTY</h4>
+            <h4 className="inventory_listitem_td__texttitlepairsmall--title">
+              QTY
+            </h4>
           </div>
-          <div className="inventory_listitem_td__texttitlepair">
+          <div className="inventory_listitem_td__texttitlepairbig">
             <img
               src={sort}
-              className="inventory_listitem_td__texttitlepair--sort"
+              className="inventory_listitem_td__texttitlepairbig--sort"
             ></img>
-            <h4 className="inventory_listitem_td__texttitlepair--title">
+            <h4 className="inventory_listitem_td__texttitlepairbig--title">
               WAREHOUSE
             </h4>
           </div>
@@ -81,15 +131,10 @@ function InventoryListComponent(props) {
               ACTIONS
             </h4>
           </div>
-
-          <h4>INVENTORY ITEM</h4>
-          <h4>CATEGORY</h4>
-          <h4>STATUS</h4>
-          <h4>QTY</h4>
-          <h4>WAREHOUSE</h4>
         </div>
-        {inv_td}
-        <div className="inventory_listitem_td__actionButtons">
+        <div className="inventory_listitem_td__textcontainer">{inv_td}</div>
+
+        {/* <div className="inventory_listitem_td__actionButtons">
           <a
             onClick={() => {
               deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
@@ -112,7 +157,22 @@ function InventoryListComponent(props) {
               src={edit}
             ></img>
           </a>
-        </div>
+        </div> */}
+
+        {/* <div className="inventory_listitem_td__actionButtons">
+          <a className="inventory_listitem_td__actionButtons--deletebutton">
+            <img
+              className="inventory_listitem_td__actionButtons--delete"
+              src={del}
+            ></img>
+          </a>
+          <a className="inventory_listitem_td__actionButtons--editbutton">
+            <img
+              className="inventory_listitem_td__actionButtons--edit"
+              src={edit}
+            ></img>
+          </a>
+        </div> */}
       </div>
 
       <div className="inventory_listitem">
