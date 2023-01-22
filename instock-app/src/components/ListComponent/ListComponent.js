@@ -158,21 +158,6 @@ function InventoryListComponent(props) {
             ></img>
           </a>
         </div> */}
-
-        <div className="inventory_listitem_td__actionButtons">
-          <a className="inventory_listitem_td__actionButtons--deletebutton">
-            <img
-              className="inventory_listitem_td__actionButtons--delete"
-              src={del}
-            ></img>
-          </a>
-          <a className="inventory_listitem_td__actionButtons--editbutton">
-            <img
-              className="inventory_listitem_td__actionButtons--edit"
-              src={edit}
-            ></img>
-          </a>
-        </div>
       </div>
 
       <div className="inventory_listitem">
