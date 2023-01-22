@@ -14,6 +14,7 @@ function Warehouse() {
 			.get("http://localhost:3030/warehouse/" + warehouseId)
 			.then((res) => {
 				setwarehouseDetails(res.data);
+				console.log(res.data);
 			});
 	}, [warehouseId]);
 
@@ -26,7 +27,11 @@ function Warehouse() {
 					inventoryId
 			)
 			.then((res) => {
+				console.log(res);
 				setwarehouseDetails(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
 			});
 	}, [warehouseId, inventoryId]);
 

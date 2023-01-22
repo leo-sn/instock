@@ -1,15 +1,18 @@
 import "../WarehouseItemList/WarehouseItemList.scss";
 import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import EditButton from "../Buttons/EditButton/EditButton";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function WarehouseItemList(props) {
+	// console.log(props.warehouseDetails.id);
 	return (
 		<>
 			<div className="warehouse-list__item">
 				<div>
 					<h2>{props.warehouseDetails.name}</h2>
-					<EditButton />
+					<Link to={`/warehouse/edit/${props.warehouseDetails.id}`}>
+						<EditButton />
+					</Link>
 				</div>
 				<hr className="warehouse-list__item--linebreak"></hr>
 				<h3>WAREHOUSE ADDRESS:</h3>
