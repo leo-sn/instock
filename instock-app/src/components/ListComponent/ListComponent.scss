@@ -159,11 +159,10 @@
   //only for mobile view, hide everything else
 
   @include mobile {
-    position: absolute;
     top: 100px;
     font-family: "titillium web";
     width: 343px;
-    height: 1500px;
+    height: 40vh;
 
     border-bottom: 1px solid $Cloud;
     background-color: #fff;
