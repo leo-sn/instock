@@ -200,7 +200,7 @@ function InventoryListComponent(props) {
           </div>
         </div>
 
-        {/* <div className="inventory_listitem__actionButtons">
+        <div className="inventory_listitem__actionButtons">
           <a
             onClick={() => {
               deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
@@ -224,7 +224,7 @@ function InventoryListComponent(props) {
               src={edit}
             ></img>
           </a>
-        </div> */}
+        </div>
       </div>
     </>
   );
