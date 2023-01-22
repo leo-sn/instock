@@ -7,7 +7,7 @@
 		top: 0px;
 		width: 375px;
 		height: 200px;
-		background-color: #232940;
+		background-color: $Graphite;
 
 		&__logo {
 			background-image: url("../../../assets/logos/InStock-Logo_1x.png");
@@ -53,8 +53,7 @@
 			font-size: 13px;
 			line-height: 20px;
 			position: absolute;
-			position: absolute;
-			width: 163px;
+			width: 164px;
 			height: 34px;
 			left: 196px;
 			top: 84px;
@@ -77,7 +76,7 @@
 		&__logo {
 			position: absolute;
 			left: 32px;
-			top: 32px;
+			top: 20px;
 		}
 
 		&__heading--warehouse {
@@ -92,10 +91,10 @@
 		&__heading--inventory {
 			// Add hover and clicked effects
 			position: absolute;
-			width: 58px;
-			height: 22px;
-			left: 678px;
-			top: 35px;
+			width: 107px;
+			height: 38px;
+			left: 650px;
+			top: 27px;
 		}
 	}
 	@include desktop {
@@ -105,7 +104,7 @@
 		&__logo {
 			position: absolute;
 			left: 130px;
-			top: 32px;
+			top: 20px;
 		}
 
 		&__heading--warehouse {
@@ -117,7 +116,8 @@
 		&__heading--inventory {
 			// Add hover and clicked effects
 			position: absolute;
-			left: 1076px;
+			left: 1055px;
+			top: 29px;
 		}
 	}
 }

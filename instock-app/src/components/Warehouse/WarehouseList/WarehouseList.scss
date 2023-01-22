@@ -3,17 +3,13 @@
 .warehouse-list {
 	@include mobile {
 		width: 343px;
-		height: 1680px;
+		height: 160vh;
 		position: absolute;
 		left: 16px;
 		top: 136px;
 		box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 		border-radius: 3px;
 		background-color: $White;
-
-		link {
-			text-decoration: none;
-		}
 
 		&-headings {
 			display: none;
@@ -25,7 +21,7 @@
 
 		&__div {
 			position: relative;
-			top: 180px;
+			top: 190px;
 		}
 
 		&__list {

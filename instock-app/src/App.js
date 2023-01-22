@@ -16,6 +16,7 @@ function App() {
 	} else {
 		current_title = "Inventory";
 	}
+
 	return (
 		<>
 			<BrowserRouter>
@@ -34,12 +35,12 @@ function App() {
 					/>
 
 					<Route
-						path="/warehouse/:warehouseId/edit"
+						path="/warehouse/edit/:warehouseId"
 						element={<WarehouseEdit />}
 					/>
 
 					<Route
-						path="/warehouse/:warehouseId/delete"
+						path="/warehouse/delete/:warehouseId"
 						element={<WarehouseDelete />}
 					></Route>
 

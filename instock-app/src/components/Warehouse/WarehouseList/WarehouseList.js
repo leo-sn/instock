@@ -7,18 +7,10 @@ import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import RightArrow from "../../../assets/icons/chevron_right-24px.svg";
 import { useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function WarehouseList(props) {
 	const title = props.title;
-
-	// function deleteWarehouse(id) {
-	// 	console.log(id);
-
-	// 	axios.delete(`http://localhost:3030/warehouse/${id}`).then((res) => {
-	// 		console.log(res);
-	// 	});
-	// }
-
 	return (
 		<>
 			<div className="warehouse-list">
@@ -82,12 +74,13 @@ function WarehouseList(props) {
 								<p className="warehouse-list__sub-heading  warehouse-list__buttons-heading">
 									ACTIONS
 								</p>
-								<DeleteButton
-								// deleteWarehouse={() =>
-								// 	deleteWarehouse(list.id)
-								// }
-								/>
-								<EditButton />
+								<Link to={`/warehouse/delete/${list.id}`}>
+									<DeleteButton />
+								</Link>
+
+								<Link to={`/warehouse/edit/${list.id}`}>
+									<EditButton />
+								</Link>
 							</div>
 						</div>
 					);
