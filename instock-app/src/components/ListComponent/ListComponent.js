@@ -7,6 +7,13 @@ import sort from "../../assets/icons/sort-24px.svg";
 function InventoryListComponent(props) {
   ////MOBILE VIEW REPEATING DIV////
   const inv = props.listitems.map((i) => {
+    if (i.status == "In Stock") {
+      var statusclassmobilelowertext =
+        "inventory_listitem__textpair3--lowertext green";
+    } else {
+      var statusclassmobilelowertext =
+        "inventory_listitem__textpair3--lowertext red";
+    }
     return (
       <>
         <div className="inventory_listitem">
@@ -16,7 +23,8 @@ function InventoryListComponent(props) {
                 INVENTORY ITEM
               </h4>
               <h3 className="inventory_listitem__textpair1--lowertext">
-                {i.itemName}
+                {/* {i.itemName} */}
+                {`${i.itemName} >`}
               </h3>
             </div>
             <div className="inventory_listitem__textpair2">
@@ -31,9 +39,7 @@ function InventoryListComponent(props) {
               <h4 className="inventory_listitem__textpair3--uppertext">
                 STATUS
               </h4>
-              <p className="inventory_listitem__textpair3--lowertext">
-                {i.status}
-              </p>
+              <p className={statusclassmobilelowertext}>{i.status}</p>
             </div>
             <div className="inventory_listitem__textpair4">
               <h4 className="inventory_listitem__textpair4--uppertext">QTY</h4>
@@ -49,32 +55,21 @@ function InventoryListComponent(props) {
                 {i.warehouseName}
               </p>
             </div>
-          </div>
+            <div className="inventory_listitem__text--action">
+              <a className="inventory_listitem__text--actiondeletebutton">
+                <img
+                  className="inventory_listitem__text--actiondelete"
+                  src={del}
+                ></img>
+              </a>
 
-          <div className="inventory_listitem__actionButtons">
-            <a
-              onClick={() => {
-                deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-              }}
-              className="inventory_listitem__actionButtons--deletebutton"
-            >
-              <img
-                className="inventory_listitem_td__actionButtons--delete"
-                src={del}
-              ></img>
-            </a>
-
-            <a
-              onClick={() => {
-                editInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-              }}
-              className="inventory_listitem__actionButtons--editbutton"
-            >
-              <img
-                className="inventory_listitem__actionButtons--edit"
-                src={edit}
-              ></img>
-            </a>
+              <a className="inventory_listitem__text--actioneditbutton">
+                <img
+                  className="inventory_listitem__text--actionedit"
+                  src={edit}
+                ></img>
+              </a>
+            </div>
           </div>
         </div>
       </>
