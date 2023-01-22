@@ -1,5 +1,5 @@
 import "../ListComponent/ListComponent.scss";
-import { Link } from "react-router-dom";
+
 import del from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
 import "../ListComponent/ListComponent.scss";
@@ -159,7 +159,7 @@ function InventoryListComponent(props) {
           </a>
         </div> */}
 
-        {/* <div className="inventory_listitem_td__actionButtons">
+        <div className="inventory_listitem_td__actionButtons">
           <a className="inventory_listitem_td__actionButtons--deletebutton">
             <img
               className="inventory_listitem_td__actionButtons--delete"
@@ -172,7 +172,7 @@ function InventoryListComponent(props) {
               src={edit}
             ></img>
           </a>
-        </div> */}
+        </div>
       </div>
 
       <div className="inventory_listitem">
@@ -215,7 +215,7 @@ function InventoryListComponent(props) {
           </div>
         </div>
 
-        <div className="inventory_listitem__actionButtons">
+        {/* <div className="inventory_listitem__actionButtons">
           <a
             onClick={() => {
               deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
@@ -239,7 +239,7 @@ function InventoryListComponent(props) {
               src={edit}
             ></img>
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );
