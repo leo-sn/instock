@@ -1,0 +1,14 @@
+@import "../../App.scss";
+
+/* Auto layout */
+.inventoryform {
+  @include tablet {
+    border: 2px solid black;
+    background-color: white;
+    position: absolute;
+    top: 20vh;
+    left: 5%;
+    right: 5%;
+    width: 704px;
+  }
+}

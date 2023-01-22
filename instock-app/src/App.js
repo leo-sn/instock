@@ -2,9 +2,11 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Warehouse from "./pages/Warehouse/Warehouse";
 import Inventory from "./pages/Inventory/Inventory";
+import AddNewInventoryItemPage from "./pages/AddNewInventoryItemPage/AddNewInventoryItemPage";
 import WarehouseDetails from "./pages/Warehouse/WarehouseDetails";
 import { useParams } from "react-router-dom";
 import DetailInventoryItem from "./components/DetailInventoryItem/DetailInventoryItem";
+import Test from "./pages/testpage";
 
 function App() {
   const { title } = useParams();
@@ -33,6 +35,9 @@ function App() {
             path="/inventory"
             element={<Inventory title={current_title} />}
           />
+
+          <Route path="/inventory/add" element={<AddNewInventoryItemPage />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </>
