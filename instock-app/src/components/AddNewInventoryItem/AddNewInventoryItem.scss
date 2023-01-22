@@ -1,0 +1,26 @@
+@import "../../App.scss";
+.addinventory {
+  @include mobile {
+  }
+  @include tablet {
+    width: 704px;
+    position: absolute;
+
+    top: 5.75rem;
+    border-bottom: 1px solid $Slate;
+    &__headertitle {
+      box-sizing: border-box;
+      padding-left: 10%;
+      font-family: "Titillium Web";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+      color: $Instock-Black;
+    }
+  }
+  @include desktop {
+  }
+}

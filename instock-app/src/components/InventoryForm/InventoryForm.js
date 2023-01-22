@@ -1,19 +1,8 @@
 import "../InventoryForm/InventoryForm.scss";
-import backarrow from "../../assets/icons/arrow_back-24px.svg";
 function InventoryForm(props) {
   return (
     <>
       <div className="inventoryform">
-        <div className="inventoryform__header">
-          <img
-            src="backarrow"
-            className="inventoryform__header--img"
-            alt="backarrow"
-          ></img>
-          <h1 className="inventoryform__header--title">
-            ADD NEW INVENTORY ITEM
-          </h1>
-        </div>
         <div className="inventoryform_body">
           <form classname="inventoryform_body__form1">
             <label className="inventoryform_body__form1--label1">

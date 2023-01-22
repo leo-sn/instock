@@ -155,137 +155,143 @@
       }
     }
   }
+  @include mobile {
+    display: none;
+  }
 }
 /////////// ********************** FOR MOBILE VIEW ***************************///////////////////////
 .inventory_listitem {
   //only for mobile view, hide everything else
 
-  //@include mobile {
-  font-family: "titillium web";
-  width: 343px;
-  height: 40vh;
-  border-bottom: 1px solid $Cloud;
-  background-color: #fff;
-  /* White */
+  @include mobile {
+    position: absolute;
+    top: 100px;
+    font-family: "titillium web";
+    width: 343px;
+    height: 1500px;
 
-  background: #ffffff;
-  /* Card Shadow */
+    border-bottom: 1px solid $Cloud;
+    background-color: #fff;
+    /* White */
 
-  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  border-radius: 3px;
-  &__text {
-    color: $Slate;
-    position: relative;
-    &--action {
-      box-sizing: border-box;
+    background: #ffffff;
+    /* Card Shadow */
+
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    &__text {
+      color: $Slate;
+      position: relative;
+      &--action {
+        box-sizing: border-box;
+        position: absolute;
+        top: 30vh;
+        width: 343px;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &__textpair1 {
       position: absolute;
+
+      top: 5%;
+      left: 5%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Instock-Indigo;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair2 {
+      position: absolute;
+
+      top: 10vh;
+      left: 5%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair3 {
+      position: absolute;
+
+      top: 5%;
+      left: 60%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair4 {
+      position: absolute;
+
+      top: 10vh;
+      left: 60%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1.25rem;
+      }
+    }
+    &__textpair5 {
+      position: absolute;
+
+      top: 20vh;
+      left: 60%;
+      &--uppertext {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1rem;
+      }
+      &--lowertext {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $Slate;
+        line-height: 1.25rem;
+      }
+    }
+    &__actionButtons {
+      position: absolute;
+      box-sizing: border-box;
+      left: 0;
       top: 30vh;
-      width: 343px;
-      padding-left: 5%;
-      padding-right: 5%;
-      display: flex;
-      justify-content: space-between;
+      width: 100%;
+      height: 5vh;
     }
   }
-  &__textpair1 {
-    position: absolute;
-
-    top: 5%;
-    left: 5%;
-    &--uppertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1rem;
-    }
-    &--lowertext {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: $Instock-Indigo;
-      line-height: 1.25rem;
-    }
-  }
-  &__textpair2 {
-    position: absolute;
-
-    top: 10vh;
-    left: 5%;
-    &--uppertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1rem;
-    }
-    &--lowertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1.25rem;
-    }
-  }
-  &__textpair3 {
-    position: absolute;
-
-    top: 5%;
-    left: 60%;
-    &--uppertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1rem;
-    }
-    &--lowertext {
-      text-align: center;
-      font-size: 11px;
-      font-weight: 600;
-      line-height: 1.25rem;
-    }
-  }
-  &__textpair4 {
-    position: absolute;
-
-    top: 10vh;
-    left: 60%;
-    &--uppertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1rem;
-    }
-    &--lowertext {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1.25rem;
-    }
-  }
-  &__textpair5 {
-    position: absolute;
-
-    top: 20vh;
-    left: 60%;
-    &--uppertext {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1rem;
-    }
-    &--lowertext {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: $Slate;
-      line-height: 1.25rem;
-    }
-  }
-  &__actionButtons {
-    position: absolute;
-    box-sizing: border-box;
-    left: 0;
-    top: 30vh;
-    width: 100%;
-    height: 5vh;
-  }
-  //}
 
   @include tablet {
     display: none;
