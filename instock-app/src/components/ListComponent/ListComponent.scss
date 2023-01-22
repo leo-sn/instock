@@ -162,11 +162,15 @@
 
   @include mobile {
     font-family: "titillium web";
-    height: 50vh;
-    width: 80vw;
+    width: 343px;
     background-color: #fff;
-    border-bottom: 0.125rem solid $Cloud;
-    position: relative;
+    /* White */
+
+    background: #ffffff;
+    /* Card Shadow */
+
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
     &__text {
       position: relative;
     }

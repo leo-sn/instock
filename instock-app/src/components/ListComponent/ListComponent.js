@@ -5,16 +5,83 @@ import edit from "../../assets/icons/edit-24px.svg";
 import "../ListComponent/ListComponent.scss";
 import sort from "../../assets/icons/sort-24px.svg";
 function InventoryListComponent(props) {
-  //console.log(props.listitems);
-  props.listitems.map((i) => {
-    if (i.status == "In Stock") {
-      console.log("this is instock");
-      console.log(i.id);
-    } else {
-      console.log("this is out of stock");
-      console.log(i.id);
-    }
+  ////MOBILE VIEW REPEATING DIV////
+  const inv = props.listitems.map((i) => {
+    return (
+      <>
+        <div className="inventory_listitem">
+          <div className="inventory_listitem__text">
+            <div className="inventory_listitem__textpair1">
+              <h4 className="inventory_listitem__textpair1--uppertext">
+                INVENTORY ITEM
+              </h4>
+              <h3 className="inventory_listitem__textpair1--lowertext">
+                {i.itemName}
+              </h3>
+            </div>
+            <div className="inventory_listitem__textpair2">
+              <h4 className="inventory_listitem__textpair2--uppertext">
+                CATEGORY
+              </h4>
+              <p className="inventory_listitem__textpair2--lowertext">
+                {i.category}
+              </p>
+            </div>
+            <div className="inventory_listitem__textpair3">
+              <h4 className="inventory_listitem__textpair3--uppertext">
+                STATUS
+              </h4>
+              <p className="inventory_listitem__textpair3--lowertext">
+                {i.status}
+              </p>
+            </div>
+            <div className="inventory_listitem__textpair4">
+              <h4 className="inventory_listitem__textpair4--uppertext">QTY</h4>
+              <p className="inventory_listitem__textpair4--lowertext">
+                {i.quantity}
+              </p>
+            </div>
+            <div className="inventory_listitem__textpair5">
+              <h4 className="inventory_listitem__textpair5--uppertext">
+                WAREHOUSE
+              </h4>
+              <p className="inventory_listitem__textpair5--lowertext">
+                {i.warehouseName}
+              </p>
+            </div>
+          </div>
+
+          <div className="inventory_listitem__actionButtons">
+            <a
+              onClick={() => {
+                deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
+              }}
+              className="inventory_listitem__actionButtons--deletebutton"
+            >
+              <img
+                className="inventory_listitem_td__actionButtons--delete"
+                src={del}
+              ></img>
+            </a>
+
+            <a
+              onClick={() => {
+                editInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
+              }}
+              className="inventory_listitem__actionButtons--editbutton"
+            >
+              <img
+                className="inventory_listitem__actionButtons--edit"
+                src={edit}
+              ></img>
+            </a>
+          </div>
+        </div>
+      </>
+    );
   });
+
+  ////////////// TABLET/DESKTOP VIEW REPEATING PART//////////////////////
 
   const inv_td = props.listitems.map((i) => {
     if (i.status == "In Stock") {
@@ -65,17 +132,7 @@ function InventoryListComponent(props) {
       </div>
     );
   });
-
-  //1. add delete function
-  function deleteInventoryItem(id) {
-    console.log("this is the delete inventory item function");
-  }
-
-  //2. add edit function
-  function editInventoryItem(id) {
-    console.log("this is the edit inventory item function");
-  }
-
+  ////////////// TABLET/DESKTOP VIEW HEADER PART//////////////////////
   return (
     <>
       <div className="inventory_listitem_td">
@@ -134,7 +191,7 @@ function InventoryListComponent(props) {
         </div>
         <div className="inventory_listitem_td__textcontainer">{inv_td}</div>
 
-        {/* <div className="inventory_listitem_td__actionButtons">
+        {/* SAMPLE ON CLICK FOR TD VIEW        <div className="inventory_listitem_td__actionButtons">
           <a
             onClick={() => {
               deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
@@ -160,7 +217,7 @@ function InventoryListComponent(props) {
         </div> */}
       </div>
 
-      <div className="inventory_listitem">
+      {/* ARCHIVED MOBILE PART    <div className="inventory_listitem">
         <div className="inventory_listitem__text">
           <div className="inventory_listitem__textpair1">
             <h4 className="inventory_listitem__textpair1--uppertext">
@@ -225,7 +282,8 @@ function InventoryListComponent(props) {
             ></img>
           </a>
         </div>
-      </div>
+      </div> */}
+      {inv}
     </>
   );
 }
