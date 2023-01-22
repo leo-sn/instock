@@ -2,6 +2,7 @@ import "../ListComponent/ListComponent.scss";
 import { Link } from "react-router-dom";
 import del from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
+import sort from "../../assets/icons/sort-24px.svg";
 
 function InventoryListComponent(props) {
   //console.log(props.listitems);
@@ -31,11 +32,61 @@ function InventoryListComponent(props) {
     <>
       <div className="inventory_listitem_td">
         <div className="inventory_listitem_td__texttitle">
-          <p>INVENTORY ITEM</p>
-          <p>CATEGORY</p>
-          <p>STATUS</p>
-          <p>QTY</p>
-          <p>WAREHOUSE</p>
+          <div className="inventory_listitem_td__texttitlepair">
+            <img
+              src={sort}
+              className="inventory_listitem_td__texttitlepair--sort"
+            ></img>
+            <h4 className="inventory_listitem_td__texttitlepair--title">
+              INVENTORY ITEM
+            </h4>
+          </div>
+
+          <div className="inventory_listitem_td__texttitlepair">
+            <img
+              src={sort}
+              className="inventory_listitem_td__texttitlepair--sort"
+            ></img>
+            <h4 className="inventory_listitem_td__texttitlepair--title">
+              CATEGORY
+            </h4>
+          </div>
+          <div className="inventory_listitem_td__texttitlepair">
+            <img
+              src={sort}
+              className="inventory_listitem_td__texttitlepair--sort"
+            ></img>
+            <h4 className="inventory_listitem_td__texttitlepair--title">
+              STATUS
+            </h4>
+          </div>
+          <div className="inventory_listitem_td__texttitlepair">
+            <img
+              src={sort}
+              className="inventory_listitem_td__texttitlepair--sort"
+            ></img>
+            <h4 className="inventory_listitem_td__texttitlepair--title">QTY</h4>
+          </div>
+          <div className="inventory_listitem_td__texttitlepair">
+            <img
+              src={sort}
+              className="inventory_listitem_td__texttitlepair--sort"
+            ></img>
+            <h4 className="inventory_listitem_td__texttitlepair--title">
+              WAREHOUSE
+            </h4>
+          </div>
+          <div className="inventory_listitem_td__texttitlepair">
+            <h4 className="inventory_listitem_td__texttitlepair--title">
+              ACTIONS
+            </h4>
+          </div>
+
+          <h4>INVENTORY ITEM</h4>
+          <h4>CATEGORY</h4>
+          <h4>STATUS</h4>
+          <h4>QTY</h4>
+          <h4>WAREHOUSE</h4>
         </div>
         {inv_td}
         <div className="inventory_listitem_td__actionButtons">

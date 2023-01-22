@@ -2,9 +2,10 @@
 
 .inventory_listitem_td {
   //only for tablet and desktop hide everything else
+  font-family: "titillium web";
 
   @include tablet {
-    width: 80vw;
+    width: 100%;
     height: 50vh;
     border: 2px solid blueviolet;
     &__text {
@@ -13,12 +14,29 @@
     &__actionButtons {
       border: 2px solid greenyellow;
     }
-    &__textitle {
-      border: 2px solid pink;
+    &__texttitle {
+      position: absolute;
+      width: 704px;
+      height: 40px;
+      left: 32px;
+      top: 186px;
+
+      background: rgba(247, 248, 249, 0.7);
+      display: flex;
+      justify-content: space-evenly;
+    }
+    &__texttitlepair {
+      &--title {
+        font-size: 0.75rem;
+        font-family: "Titillium Web";
+      }
+      &--sort {
+        font-size: 12px;
+      }
     }
   }
   @include desktop {
-    width: 80vw;
+    width: 100%;
     height: 50vh;
     &__text {
       border: 2px dotted black;
@@ -35,7 +53,7 @@
   //@include mobile {
   font-family: "titillium web";
   height: 50vh;
-  width: 80vw;
+  width: 100%;
   background-color: #fff;
   border-bottom: 0.125rem solid $Cloud;
   position: relative;
