@@ -1,0 +1,69 @@
+@import "../../../App.scss";
+
+* {
+    font-family: "Titillium Web";
+}
+
+.delete-modal-container {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 76vh;
+    justify-content: space-between;
+
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
+
+.button-delete-modal {
+    width: 100%;
+    padding: 5px 45px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button-colored {
+    background-color: #c94516;
+    color: white;
+    border: 0px;
+}
+
+@include tablet {
+
+    html {
+        background-color: rgba(0,0,0,0.5)
+
+    }
+
+    .delete-modal-container {
+        z-index: 1;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 50%);
+        gap: 10px;
+        width: 70vw;
+        height: fit-content;
+        background-color: white;
+        border-radius: 4px;
+        padding: 30px;
+
+        &__buttons {
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    }
+    
+    .button-delete-modal {
+        padding: 11px 18px;
+    }
+}

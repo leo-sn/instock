@@ -4,48 +4,53 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import './DeleteWarehouse.scss'
 
 function DeleteWarehouse() {
 	let navigate = useNavigate();
 	let { warehouseId } = useParams();
-
-	const [warehouse, setwarehouse] = useState({});
+	const [warehouseName, setWarehouseName] = useState('')
 
 	useEffect(() => {
-		loadwarehouse();
-	}, []);
+		getWarehouseName(warehouseId);
+	  });
 
-	const loadwarehouse = async () => {
-		const result = await axios.get(`http://localhost:3030/warehouse`);
-		console.log(result.data);
-		setwarehouse(result.data);
-	};
-
+	const getWarehouseName = (warehouseId) => {
+		axios.get(`http://localhost:3030/warehouse/${warehouseId}`)
+		.then(res => {
+			setWarehouseName(res.data.name)
+		})
+	}
+ 
 	const deletewarehouse = async (warehouseId) => {
 		await axios.delete(`http://localhost:3030/warehouse/${warehouseId}`);
-		loadwarehouse();
+		// loadwarehouse();
 		navigate("/");
 	};
 
 	return (
-		<>
-			<h2>Delete Warehouse?</h2>
-			<p>
-				Please confirm that you'd like to delete the from the list of
-				warehouses. You won't be able to undo this action.
-			</p>
-			<Link to={"/"}>
-				<button>Cancel</button>
-			</Link>
+		<div className="delete-modal-container">
+			<div className="delete-modal-container__text">
+				<h2>Delete {warehouseName} Warehouse?</h2>
+				<p>
+					Please confirm that you'd like to delete the {warehouseName} from the list of
+					warehouses. You won't be able to undo this action.
+				</p>
+			</div>
+			<div className="delete-modal-container__buttons">
+				<Link to={"/"}>
+					<button className="button-delete-modal">Cancel</button>
+				</Link>
 
-			<Link
-				onClick={() => {
-					deletewarehouse(warehouseId);
-				}}
-			>
-				Delete
-			</Link>
-		</>
+				<Link
+					onClick={() => {
+						deletewarehouse(warehouseId);
+					}}
+				>
+					<button className="button-delete-modal button-colored">Delete</button>
+				</Link>
+			</div>
+		</div>
 	);
 }
 
