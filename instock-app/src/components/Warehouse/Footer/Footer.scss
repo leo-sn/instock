@@ -2,11 +2,11 @@
 
 .footer {
 	@include mobile {
-		position: absolute;
+		position: relative;
 		width: 157px;
 		height: 16px;
-		left: 109px;
-		top: 1840px;
+		left: 159px;
+		top: 1860px;
 		font-family: "Titillium Web";
 		font-style: normal;
 		font-weight: 400;
@@ -18,11 +18,11 @@
 	}
 
 	@include tablet {
-		position: absolute;
+		position: relative;
 		width: 171px;
 		height: 18px;
-		left: 298px;
-		top: 966px;
+		left: 318px;
+		top: 1040px;
 		font-size: 12px;
 		line-height: 18px;
 	}
@@ -31,7 +31,7 @@
 		position: absolute;
 		width: 171px;
 		height: 18px;
-		left: 555px;
-		top: 859px;
+		left: 600px;
+		// top: 1050px;
 	}
 }

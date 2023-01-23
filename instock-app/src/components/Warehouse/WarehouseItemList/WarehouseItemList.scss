@@ -1,14 +1,50 @@
 @import "../../../App.scss";
 
-.warehouse-list__item {
+.warehouse__items {
 	@include mobile {
-		width: 343px;
-		height: 1670px;
+		width: 92%;
+		// height: 1670px;
 		position: absolute;
 		left: 16px;
 		top: 136px;
 		box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 		border-radius: 3px;
 		background-color: $White;
+		font-family: "Titillium Web";
+	}
+
+	&__main-heading-div {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__main-heading {
+		font-size: 36px;
+		position: relative;
+		right: 65px;
+	}
+
+	&__edit {
+		position: relative;
+		top: 52px;
+		width: 30px;
+		height: 30px;
+		background: $White;
+		// background-color: blue;
+		border-radius: 50%;
+	}
+
+	&-arrow {
+		position: relative;
+		top: 48px;
+	}
+
+	&--warehouse-heading {
+		font-family: "Titillium Web";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 11px;
+		line-height: 16px;
+		color: $Slate;
 	}
 }

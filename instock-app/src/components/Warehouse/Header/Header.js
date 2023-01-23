@@ -6,12 +6,17 @@ function Header() {
 		<>
 			<div className="header">
 				<p className="header__logo"></p>
-				<NavLink to="/" className="header__heading--warehouse">
-					Warehouses
-				</NavLink>
-				<NavLink to="/inventory" className="header__heading--inventory">
-					Inventory
-				</NavLink>
+				<div className="header__flex">
+					<NavLink to="/" className="header__heading--warehouse">
+						Warehouses
+					</NavLink>
+					<NavLink
+						to="/inventory"
+						className="header__heading--inventory"
+					>
+						Inventory
+					</NavLink>
+				</div>
 			</div>
 		</>
 	);

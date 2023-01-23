@@ -2,16 +2,17 @@
 
 .warehouse-list {
 	@include mobile {
-		width: 343px;
-		height: 160vh;
+		width: 93%;
+		height: 222vh;
 		position: absolute;
 		left: 16px;
+		// right: 16px;
 		top: 136px;
 		box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 		border-radius: 3px;
 		background-color: $White;
 
-		&-headings {
+		&__headings {
 			display: none;
 		}
 
@@ -21,14 +22,14 @@
 
 		&__div {
 			position: relative;
-			top: 190px;
+			top: 20px;
 		}
 
 		&__list {
 			font-family: "Titillium Web";
 			display: flex;
-			gap: 50px;
-			margin-left: 20px;
+			gap: 150px;
+			margin-left: 30px;
 		}
 
 		&__sub-heading {
@@ -97,6 +98,8 @@
 
 		&-buttons {
 			display: flex;
+			gap: 120px;
+			margin-left: 10px;
 		}
 
 		&__buttons-heading {
@@ -104,33 +107,33 @@
 		}
 	}
 	@include tablet {
-		width: 704px;
-		height: 804px;
+		height: 120vh;
 		position: absolute;
 		top: 92px;
 		left: 32px;
 
 		&__right-arrow {
 			margin-top: -3px;
-			// margin-
-			margin-left: 10px;
+			margin-left: 60px;
 		}
 		&__link {
-			display: flex;
-			gap: 10px;
+			width: 10px;
 		}
 
 		&__div {
 			position: relative;
-			top: 105px;
+			top: 85px;
 		}
 
 		&-buttons {
 			display: flex;
 			gap: 0px;
+			position: relative;
+			left: 70px;
+			bottom: 20px;
 		}
 
-		&-headings {
+		&__headings {
 			display: inherit;
 			position: absolute;
 			width: 704px;
@@ -138,13 +141,12 @@
 			top: 95px;
 			left: 32px;
 			display: flex;
-			gap: 65px;
+			gap: 82.5px;
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 600;
 			font-size: 12px;
 			line-height: 18px;
-			// color: $Indigo-Black;
 		}
 
 		&__buttons-heading {
@@ -156,29 +158,43 @@
 			left: 32px;
 		}
 
-		&__contact-name {
-			position: absolute;
-			left: 280px;
-			color: $Slate;
-		}
-
 		&__address {
 			position: absolute;
-			left: 165px;
-			top: 10px;
-			width: 87px;
-			height: 44px;
+			left: 180px;
+			top: 25px;
+			width: 110px;
+			font-family: "Titillium Web";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 13.4px;
+			line-height: 22px;
 		}
 
 		&__email {
 			position: absolute;
-			left: 428px;
-			top: 30px;
+			left: 475px;
+			top: 50px;
+			font-size: 13.4px;
+			line-height: 22px;
 		}
 
 		&__contact {
 			position: absolute;
-			left: 428px;
+			left: 475px;
+			top: 28px;
+			font-size: 13.4px;
+			line-height: 22px;
+		}
+
+		&__contact-name {
+			color: $Instock-Black;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 13.4px;
+			line-height: 22px;
+			position: absolute;
+			left: 320px;
+			top: 40px;
 		}
 
 		&__sub-heading {
@@ -187,19 +203,99 @@
 
 		&__heading-div {
 			display: inherit;
-			background: rgba(246, 247, 249, 0.5);
+			background: rgba(241, 241, 241, 0.5);
 			position: relative;
-			width: 704px;
+			width: 100%;
 			height: 40px;
 			top: 95px;
+		}
+
+		&__linebreak {
+			margin-top: 20px;
+		}
+
+		&--info {
+			padding-top: 26px;
+			height: 25px;
 		}
 	}
 
 	@include desktop {
-		width: 1020px;
-		height: 627px;
+		height: 114vh;
 		position: absolute;
 		top: 92px;
 		left: 130px;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		&__headings {
+			position: absolute;
+			left: 40px;
+			top: 100px;
+		}
+
+		&__heading-div {
+			top: 100px;
+		}
+
+		&--warehouse {
+			position: relative;
+			left: 5px;
+		}
+		&--address {
+			position: relative;
+			left: 140px;
+		}
+		&--cname {
+			position: relative;
+			left: 250px;
+		}
+		&--cinformation {
+			position: relative;
+			left: 360px;
+		}
+		&--actions {
+			position: relative;
+			left: 470px;
+		}
+
+		&__name {
+			position: relative;
+			left: 20px;
+			font-size: 14px;
+			// width: 1000px;
+		}
+		&__address {
+			position: absolute;
+			left: 330px;
+			font-size: 14px;
+		}
+
+		&__contact-name {
+			position: relative;
+			left: 385px;
+			top: 30px;
+		}
+
+		&__contact {
+			position: absolute;
+			left: 850px;
+		}
+
+		&__email {
+			position: absolute;
+			left: 850px;
+		}
+
+		&-buttons {
+			position: relative;
+			left: 545px;
+		}
+
+		&__div {
+			position: relative;
+			top: 90px;
+		}
 	}
 }

@@ -4,11 +4,11 @@
 	@include mobile {
 		color: $Instock-Black;
 		font-family: "Titillium Web";
-		position: absolute;
+		position: relative;
 		width: 150px;
 		height: 36px;
 		left: 25px;
-		top: 7px;
+		// top: 7px;
 		font-size: 30px;
 		line-height: 36px;
 		font-weight: 600;
@@ -20,25 +20,27 @@
 			color: $Slate;
 			background-color: $White;
 			box-sizing: border-box;
-			position: absolute;
-			width: 295px;
-			height: 36px;
+			position: relative;
+			width: 89%;
+			// margin: 10px auto;
+			margin-bottom: 20px;
+			height: 45px;
 			left: 25px;
-			top: 85px;
+			// top: 85px;
 			border: 1px solid $Cloud;
 			border-radius: 20px;
 			background-image: url(../../../../assets/icons/search-24px.svg);
 			background-repeat: no-repeat;
 			background-size: 27px;
-			background-position-x: 252px;
+			background-position-x: 74vw;
 			background-position-y: center;
 		}
 
 		&__button--add {
 			border: 1px solid $Instock-Indigo;
 			border-radius: 20px;
-			width: 295px;
-			height: 36px;
+			width: 89%;
+			height: 45px;
 			font-family: "Titillium Web";
 			font-weight: 600;
 			font-size: 14px;
@@ -46,9 +48,9 @@
 			color: $White;
 			background: $Instock-Indigo;
 			padding: 0px 75px;
-			position: absolute;
+			position: relative;
 			left: 25px;
-			top: 140px;
+			// top: 140px;
 		}
 	}
 
@@ -68,7 +70,7 @@
 			position: absolute;
 			width: 185px;
 			height: 38px;
-			left: 300px;
+			left: 400px;
 			top: 35px;
 			background-size: 23px;
 			background-position-x: 150px;
@@ -82,23 +84,23 @@
 			position: absolute;
 			width: 168px;
 			height: 38px;
-			left: 501px;
+			left: 601px;
 			top: 35px;
 		}
 	}
 
 	@include desktop {
-		position: absolute;
+		// position: absolute;
 		width: 171px;
 		height: 40px;
-		top: 10px;
+		// top: 10px;
 
 		&__input {
 			font-size: 14px;
 			position: absolute;
 			width: 274px;
 			height: 38px;
-			left: 520px;
+			left: 770px;
 			top: 40px;
 			background-size: 23px;
 			background-position-x: 235px;
@@ -118,7 +120,7 @@
 			padding: 8px 15px;
 			gap: 10px;
 			position: absolute;
-			left: 815px;
+			left: 1080px;
 			top: 40px;
 		}
 	}

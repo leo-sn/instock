@@ -2,29 +2,48 @@ import "../WarehouseItemList/WarehouseItemList.scss";
 import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import EditButton from "../Buttons/EditButton/EditButton";
 import { NavLink, Link } from "react-router-dom";
+import BackArrow from "../../../assets/icons/arrow_back-24px.svg";
 
 function WarehouseItemList(props) {
 	// console.log(props.warehouseDetails.id);
 	return (
 		<>
-			<div className="warehouse-list__item">
-				<div>
-					<h2>{props.warehouseDetails.name}</h2>
-					<Link to={`/warehouse/edit/${props.warehouseDetails.id}`}>
+			<div className="warehouse__items">
+				<div className="warehouse__items__main-heading-div">
+					<Link to={`/`} className="warehouse__items-arrow">
+						<img src={BackArrow}></img>
+					</Link>
+
+					<h2 className="warehouse__items__main-heading">
+						{props.warehouseDetails.name}
+					</h2>
+					<Link
+						className="warehouse__items__edit"
+						to={`/warehouse/edit/${props.warehouseDetails.id}`}
+					>
 						<EditButton />
 					</Link>
 				</div>
 				<hr className="warehouse-list__item--linebreak"></hr>
-				<h3>WAREHOUSE ADDRESS:</h3>
+				<h3 className="warehouse__items--warehouse-heading">
+					WAREHOUSE ADDRESS:
+				</h3>
 				<p>
 					{props.warehouseDetails.address},{" "}
 					{props.warehouseDetails.city},{" "}
 					{props.warehouseDetails.country}
 				</p>
-				<h3>CONTACT NAME:</h3>
-				<p>{props.warehouseDetails.contact?.name}</p>
-				<p>{props.warehouseDetails.contact?.position}</p>
-				<h3>CONTACT INFORMATION:</h3>
+				<div>
+					<h3 className="warehouse__items--warehouse-heading">
+						CONTACT NAME:
+					</h3>
+					<p>{props.warehouseDetails.contact?.name}</p>
+					<p>{props.warehouseDetails.contact?.position}</p>
+				</div>
+
+				<h3 className="warehouse__items--warehouse-heading">
+					CONTACT INFORMATION:
+				</h3>
 				<p>{props.warehouseDetails.contact?.phone}</p>
 				<p>{props.warehouseDetails.contact?.email}</p>
 				{props.warehouseDetails.inventory?.map((item) => {

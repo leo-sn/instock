@@ -3,19 +3,21 @@
 .header {
 	@include mobile {
 		position: absolute;
+		// position: relative;
 		left: 0px;
+		// left: 50%;
+		// transform: translateX(-50%);
 		top: 0px;
-		width: 375px;
+		// width: 375px;
 		height: 200px;
+		width: 100%;
 		background-color: $Graphite;
 
 		&__logo {
 			background-image: url("../../../assets/logos/InStock-Logo_1x.png");
 			height: 28px;
 			width: 128.5904px;
-			position: absolute;
-			left: 123px;
-			top: 24px;
+			margin: 30px auto;
 		}
 
 		&__heading--warehouse {
@@ -24,14 +26,14 @@
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 600;
-			font-size: 13px;
+			font-size: 14px;
 			line-height: 20px;
-			position: absolute;
-			position: absolute;
+			// position: absolute;
+			// position: absolute;
 			width: 164px;
 			height: 34px;
-			left: 16px;
-			top: 84px;
+			// left: 16px;
+			// top: 84px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -44,19 +46,25 @@
 			color: $White;
 		}
 
+		&__flex {
+			display: flex;
+			justify-content: space-around;
+			gap: 80px;
+		}
+
 		&__heading--inventory {
 			// Add hover and clicked effects
 			color: $White;
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 600;
-			font-size: 13px;
+			font-size: 14px;
 			line-height: 20px;
-			position: absolute;
+			// position: absolute;
 			width: 164px;
 			height: 34px;
-			left: 196px;
-			top: 84px;
+			// left: 196px;
+			// top: 84px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -70,13 +78,14 @@
 	}
 
 	@include tablet {
-		width: 768px;
+		// width: 768px;
+		width: 100%;
 		height: 186px;
 
 		&__logo {
 			position: absolute;
 			left: 32px;
-			top: 20px;
+			top: 5px;
 		}
 
 		&__heading--warehouse {
@@ -84,7 +93,7 @@
 			position: absolute;
 			width: 107px;
 			height: 38px;
-			left: 547px;
+			left: 607px;
 			top: 27px;
 		}
 
@@ -93,30 +102,30 @@
 			position: absolute;
 			width: 107px;
 			height: 38px;
-			left: 650px;
+			left: 720px;
 			top: 27px;
 		}
 	}
 	@include desktop {
-		width: 1280px;
+		width: 100%;
 		height: 186px;
 
 		&__logo {
 			position: absolute;
-			left: 130px;
-			top: 20px;
+			left: 60px;
 		}
 
 		&__heading--warehouse {
 			// Add hover and clicked effects
 			position: absolute;
-			left: 947px;
+			left: 1147px;
+			top: 29px;
 		}
 
 		&__heading--inventory {
 			// Add hover and clicked effects
 			position: absolute;
-			left: 1055px;
+			left: 1255px;
 			top: 29px;
 		}
 	}

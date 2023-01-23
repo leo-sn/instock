@@ -15,12 +15,14 @@ function WarehouseList(props) {
 		<>
 			<div className="warehouse-list">
 				<Search title={title} />
-				<div className="warehouse-list-headings">
-					<p>WAREHOUSE</p>
-					<p>ADDRESS</p>
-					<p>CONTACT NAME</p>
-					<p>CONTACT INFORMATION</p>
-					<p>ACTIONS</p>
+				<div className="warehouse-list__headings">
+					<p className="warehouse-list--warehouse">WAREHOUSE</p>
+					<p className="warehouse-list--address">ADDRESS</p>
+					<p className="warehouse-list--cname"> CONTACT NAME</p>
+					<p className="warehouse-list--cinformation">
+						CONTACT INFORMATION
+					</p>
+					<p className="warehouse-list--actions">ACTIONS</p>
 				</div>
 				<div className="warehouse-list__heading-div"></div>
 				{props.warehouseList.map((list) => {
@@ -28,7 +30,7 @@ function WarehouseList(props) {
 						<div className="warehouse-list__div" key={list.id}>
 							<hr className="warehouse-list--linebreak"></hr>
 							<div className="warehouse-list__list">
-								<div>
+								<div className="warehouse-list--info">
 									<h3 className="warehouse-list__sub-heading warehouse-list__warehouse-heading">
 										WAREHOUSE
 									</h3>
