@@ -1,0 +1,27 @@
+@import "../../../../App.scss";
+
+.inventory-button--delete {
+  @include mobile {
+    margin-right: 247px;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    height: 18px;
+    width: 14px;
+    background-image: url(../../../assets/icons/delete_outline-24px.svg);
+    background-position: center;
+    border: none;
+  }
+
+  @include tablet {
+    margin-right: 30px;
+    margin-left: 610px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    height: 18px;
+    width: 14px;
+    background-image: url(../../../assets/icons/delete_outline-24px.svg);
+    background-position: center;
+    border: none;
+  }
+}
