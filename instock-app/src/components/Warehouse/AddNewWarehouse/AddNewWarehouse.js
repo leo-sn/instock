@@ -113,6 +113,7 @@ function AddNewWarehouse() {
                 className="warehouse-add__details--input"
               ></input>
             </div>
+
             {/*****************   CONTACT DETAILS   ********************/}
             <div className="warehouse-add__details--contact">
               <h3>Contact Details</h3>
