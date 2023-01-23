@@ -1,0 +1,19 @@
+@import "../../../../App.scss";
+
+.addbutton {
+  padding: 8px 21px;
+  //gap: 10px;
+
+  width: 140px;
+  height: 36px;
+  font-family: "Titillium Web";
+  background: #2e66e6;
+  border-radius: 20px;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  border: none;
+  margin: 5px;
+}
