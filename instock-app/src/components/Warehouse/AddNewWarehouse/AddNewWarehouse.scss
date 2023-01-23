@@ -1,6 +1,6 @@
 @import "../../../App.scss";
 
-.warehouse-list__item {
+.warehouse-add {
   @include mobile {
     width: 343px;
     // height: 1670px;
@@ -10,5 +10,13 @@
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
     background-color: $White;
+    &__details {
+      display: flex;
+      justify-content: space-around;
+      border: 2px dotted magenta;
+      &--warehouse {
+        border-right: 1px solid $Slate;
+      }
+    }
   }
 }
