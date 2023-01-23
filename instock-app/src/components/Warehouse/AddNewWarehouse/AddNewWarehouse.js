@@ -64,91 +64,107 @@ function AddNewWarehouse() {
             <h2 className="warehouse-add__header--addwarehouse">
               Add Warehouse
             </h2>
-            <hr></hr>
+            {/* <hr></hr> */}
           </div>
           <div className="warehouse-add__details">
             {/*****************   WAREHOUSE DETAILS   ********************/}
             <div className="warehouse-add__details--warehouse">
               <h3>Warehouse Details</h3>
 
-              <label>Warehouse Name</label>
+              <label className="warehouse-add__details--label">
+                Warehouse Name
+              </label>
               <input
                 type="text"
                 required="required"
                 name="name"
                 id="name"
-                // placeholder=""
+                placeholder="Warehouse Name"
+                className="warehouse-add__details--input"
               ></input>
-              <label>Street Address</label>
+              <label className="warehouse-add__details--label">
+                Street Address
+              </label>
               <input
-                placeholder=""
+                placeholder="Street Address"
                 type="text"
                 required="required"
                 name="address"
                 id="address"
+                className="warehouse-add__details--input"
               ></input>
-              <label>City</label>
+              <label className="warehouse-add__details--label">City</label>
               <input
-                placeholder=""
+                placeholder="City"
                 type="text"
                 required="required"
                 name="city"
                 id="city"
+                className="warehouse-add__details--input"
                 // placeholder="some city"
               ></input>
-              <label>country</label>
+              <label className="warehouse-add__details--label">Country</label>
               <input
-                placeholder=""
+                placeholder="Country"
                 type="text"
                 required="required"
                 name="country"
                 id="country"
+                className="warehouse-add__details--input"
               ></input>
             </div>
-            <div className="warehouse-add__details--warehouse">
-              {/*****************   CONTACT DETAILS   ********************/}
+            {/*****************   CONTACT DETAILS   ********************/}
+            <div className="warehouse-add__details--contact">
               <h3>Contact Details</h3>
 
-              <label>Contact Name</label>
+              <label className="warehouse-add__details--label">
+                Contact Name
+              </label>
               <input
-                placeholder=""
+                placeholder="Contact Name"
                 type="text"
                 required="required"
                 name="contactname"
                 id="contactname"
+                className="warehouse-add__details--input"
               ></input>
-              <label>Position</label>
+              <label className="warehouse-add__details--label">Position</label>
               <input
-                placeholder=""
+                placeholder="Position"
                 type="text"
                 required="required"
                 name="position"
                 id="position"
+                className="warehouse-add__details--input"
                 // placeholder=""
               ></input>
-              <label>Phone Number</label>
+              <label className="warehouse-add__details--label">
+                Phone Number
+              </label>
               <input
-                placeholder=""
+                placeholder="Phone Number"
                 type="text"
                 required="required"
                 name="phone"
                 id="phone"
                 // placeholder=""
+                className="warehouse-add__details--input"
               ></input>
-              <label>Email</label>
+              <label className="warehouse-add__details--label">Email</label>
               <input
-                placeholder=""
+                placeholder="Email"
                 type="text"
                 required="required"
                 name="email"
                 id="email"
                 // placeholder=""
+                className="warehouse-add__details--input"
               ></input>
             </div>
           </div>
           {/*****************   BUTTONS   ********************/}
           <div className="warehouse-add__buttons">
-            <button>Cancel</button>
+            <button className="warehouse-add__buttons--cancel">Cancel</button>
             <AddButton />
           </div>
         </div>
