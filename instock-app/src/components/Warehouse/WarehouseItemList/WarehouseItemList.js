@@ -5,7 +5,6 @@ import { NavLink, Link } from "react-router-dom";
 import BackArrow from "../../../assets/icons/arrow_back-24px.svg";
 
 function WarehouseItemList(props) {
-	// console.log(props.warehouseDetails.id);
 	return (
 		<>
 			<div className="warehouse__items">
