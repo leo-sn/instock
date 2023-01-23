@@ -278,7 +278,7 @@ function InventoryListComponent(props) {
           </a>
         </div>
       </div> */}
-      {inv}
+      <div classname="mobilecontainer"> {inv}</div>
     </>
   );
 }

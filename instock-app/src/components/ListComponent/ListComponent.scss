@@ -23,8 +23,6 @@
   background-color: $White;
   font-family: "Titillium Web";
 
-  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  border-radius: 3px;
   &__texttitle {
     position: absolute;
     width: 704px;
@@ -155,20 +153,16 @@
       }
     }
   }
-  @include mobile {
-    display: none;
-  }
 }
 /////////// ********************** FOR MOBILE VIEW ***************************///////////////////////
 .inventory_listitem {
   //only for mobile view, hide everything else
 
   @include mobile {
-    position: absolute;
     top: 100px;
     font-family: "titillium web";
     width: 343px;
-    height: 1500px;
+    height: 40vh;
 
     border-bottom: 1px solid $Cloud;
     background-color: #fff;
