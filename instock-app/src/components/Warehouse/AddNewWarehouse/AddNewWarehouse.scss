@@ -1,10 +1,89 @@
 @import "../../../App.scss";
 
 .warehouse-add {
-  @include mobile {
-    font-family: "Titillium Web";
+  ///////////////////////////////*****************   MOBILE   ************************///////////////////////////
+  // @include mobile {
+  font-family: "Titillium Web";
+  min-width: 343px;
+  max-width: 767px;
+  width: 95%;
+  position: absolute;
+  left: 20px;
+  top: 136px;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  background-color: $White;
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid $Cloud;
+    &--backbutton {
+      margin: 0 10px 0 10px;
+    }
+    &--adwarehouse {
+      font-family: "Titillium Web";
+      font-style: normal;
+      font-weight: 600;
+      line-height: 36px;
+    }
+  }
+  &__buttons {
     min-width: 343px;
-    max-width: 767px;
+    width: 100%;
+    height: 68px;
+    background: rgba(247, 248, 249, 0.7);
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
+    &--cancel {
+      width: 140px;
+      height: 36px;
+      background-color: white;
+      border: 1px solid $Cloud;
+      border-radius: 20px;
+      margin: 5px;
+    }
+  }
+  &__details {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    &--warehouse {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      // border-bottom: 1px solid $Cloud;
+    }
+    &--contact {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    &--input {
+      border-radius: 20px;
+      border: 1px solid $Cloud;
+      min-width: 295px;
+      width: 90%;
+      height: 36px;
+      padding-left: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &--label {
+      color: $Instock-Black;
+      font-family: "Titillium Web";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+  // }
+  ///////////////////////////////*****************   TABLET   ************************///////////////////////////
+  @include tablet {
+    font-family: "Titillium Web";
+    min-width: 704px;
+    max-width: 1020px;
     width: 95%;
     position: absolute;
     left: 20px;
@@ -19,7 +98,7 @@
       &--backbutton {
         margin: 0 10px 0 10px;
       }
-      &--adwarehouse {
+      &--addwarehouse {
         font-family: "Titillium Web";
         font-style: normal;
         font-weight: 600;
@@ -32,7 +111,7 @@
       height: 68px;
       background: rgba(247, 248, 249, 0.7);
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       padding-top: 10px;
       &--cancel {
         width: 140px;
@@ -44,16 +123,99 @@
       }
     }
     &__details {
-      margin-bottom: 10px;
+      width: 100%;
+      // margin-bottom: 10px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       &--warehouse {
+        width: 50%;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid $Slate;
+        border-right: 1px solid $Cloud;
       }
       &--contact {
+        width: 50%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      &--input {
+        border-radius: 20px;
+        border: 1px solid $Cloud;
+        min-width: 295px;
+        width: 90%;
+        height: 36px;
+        padding-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &--label {
+        color: $Instock-Black;
+        font-family: "Titillium Web";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+  }
+  @include desktop {
+    font-family: "Titillium Web";
+    min-width: 1020px;
+    max-width: 1280px;
+    width: 95%;
+    position: absolute;
+    left: 20px;
+    top: 136px;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    background-color: $White;
+    &__header {
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1px solid $Cloud;
+      &--backbutton {
+        margin: 0 10px 0 10px;
+      }
+      &--addwarehouse {
+        font-family: "Titillium Web";
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px;
+      }
+    }
+    &__buttons {
+      min-width: 343px;
+      width: 100%;
+      height: 68px;
+      background: rgba(247, 248, 249, 0.7);
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 10px;
+      &--cancel {
+        width: 140px;
+        height: 36px;
+        background-color: white;
+        border: 1px solid $Cloud;
+        border-radius: 20px;
+        margin: 5px;
+      }
+    }
+    &__details {
+      width: 100%;
+      // margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      &--warehouse {
+        width: 50%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $Cloud;
+      }
+      &--contact {
+        width: 50%;
         padding: 10px;
         display: flex;
         flex-direction: column;
