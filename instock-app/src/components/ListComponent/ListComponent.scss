@@ -19,15 +19,21 @@
 }
 //*******************  tablet and desktop   *****************
 .inventory_listitem_td {
-  width: 704px;
+  min-width: 704px;
+  max-width: 1019px;
+  width: 100%;
+  // background-color: red;
   // height: 605px;
-  background-color: red;
   font-family: "Titillium Web";
 
   &__texttitle {
     position: absolute;
-    width: 704px;
-    height: 60px;
+    // width: 704px;
+    // height: 60px;
+
+    min-width: 704px;
+    max-width: 1019px;
+    width: 100%;
     left: 0px;
     top: 186px;
     background: rgba(247, 248, 249, 0.7);
@@ -47,7 +53,7 @@
     }
     &--sort {
       position: absolute;
-      top: 31%;
+      top: 12px;
       right: 0;
       width: 15px;
       height: 15px;
@@ -67,7 +73,7 @@
     }
     &--sort {
       position: absolute;
-      top: 31%;
+      top: 12px;
       right: 0;
       width: 15px;
       height: 15px;
@@ -87,7 +93,7 @@
     }
     &--sort {
       position: absolute;
-      top: 31%;
+      top: 12px;
       right: 0;
       width: 15px;
       height: 15px;
@@ -140,7 +146,8 @@
     &__actionButtons {
       border: 2px dotted magenta;
       width: 13%;
-
+      display: flex;
+      justify-content: space-evenly;
       position: relative;
       &--deletebutton {
         position: absolute;
@@ -149,7 +156,7 @@
       }
       &--editbutton {
         position: absolute;
-        left: 50%;
+        left: 40%;
         top: 20%;
       }
     }

@@ -5,6 +5,7 @@ import edit from "../../assets/icons/edit-24px.svg";
 import "../ListComponent/ListComponent.scss";
 import sort from "../../assets/icons/sort-24px.svg";
 function InventoryListComponent(props) {
+  console.log(props.listitems);
   ////MOBILE VIEW REPEATING DIV////
   const inv = props.listitems.map((i) => {
     if (i.status == "In Stock") {
