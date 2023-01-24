@@ -17,14 +17,14 @@ function EditWarehouse() {
 		address: "",
 		city: "",
 		country: "",
-		contactname:"",
-		position:"",
-		phone:"",
-		email:""
+		contactname: "",
+		position: "",
+		phone: "",
+		email: "",
 	});
 
 	const onInputChange = (e) => {
-		console.log(e)
+		console.log(e);
 		setWarehouse({ ...warehouse, [e.target.name]: e.target.value });
 	};
 
@@ -46,8 +46,8 @@ function EditWarehouse() {
 				position: warehouse.position,
 				phone: warehouse.phone,
 				email: warehouse.email,
-			}
-		}
+			},
+		};
 
 		console.log(e);
 		await axios.put(
@@ -66,11 +66,11 @@ function EditWarehouse() {
 			address: result.data.address,
 			city: result.data.city,
 			country: result.data.country,
-			contactname:result.data.contact.name,
-			position:result.data.contact.position,
-			phone:result.data.contact.phone,
-			email:result.data.contact.email
-		}
+			contactname: result.data.contact.name,
+			position: result.data.contact.position,
+			phone: result.data.contact.phone,
+			email: result.data.contact.email,
+		};
 		setWarehouse(warehouseData);
 	};
 
