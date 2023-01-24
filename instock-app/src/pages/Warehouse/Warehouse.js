@@ -7,11 +7,13 @@ import Footer from "../../components/Warehouse/Footer/Footer";
 function Warehouse(props) {
 	const title = props.title;
 	const [warehouseList, setwarehouseList] = useState([]);
+
 	useEffect(() => {
 		axios.get("http://localhost:3030/warehouse").then((res) => {
 			setwarehouseList(res.data);
 		});
 	}, []);
+	
 
 	return (
 		<>

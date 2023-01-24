@@ -8,9 +8,16 @@ import RightArrow from "../../../assets/icons/chevron_right-24px.svg";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useState } from "react"
+import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
+
 
 function WarehouseList(props) {
 	const title = props.title;
+
+	const [modalActive, setModalActive] = useState(false);
+	const [idToDelete, setIdToDelete] = useState('');
+
 	return (
 		<>
 			<div className="warehouse-list">
@@ -76,9 +83,16 @@ function WarehouseList(props) {
 								<p className="warehouse-list__sub-heading  warehouse-list__buttons-heading">
 									ACTIONS
 								</p>
-								<Link to={`/warehouse/delete/${list.id}`}>
-									<DeleteButton />
-								</Link>
+								
+								<button className="warehouse-button--delete" 
+										onClick={() => {
+									setModalActive(true)
+									setIdToDelete(list.id)
+								}}>
+
+								</button>
+								{/* <DeleteButton/> */}
+								
 
 								<Link to={`/warehouse/edit/${list.id}`}>
 									<EditButton />
@@ -88,6 +102,8 @@ function WarehouseList(props) {
 					);
 				})}
 			</div>
+
+			{!!modalActive && <div className="modal-active"><DeleteWarehouse setModalActive={setModalActive} idToDelete={idToDelete}/></div>}
 		</>
 	);
 }
