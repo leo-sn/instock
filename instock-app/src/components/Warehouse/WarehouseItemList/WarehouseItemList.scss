@@ -1,17 +1,15 @@
 @import "../../../App.scss";
 
 .warehouse__items {
-	@include mobile {
-		width: 92%;
-		// height: 1670px;
-		position: absolute;
-		left: 16px;
-		top: 136px;
-		box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-		border-radius: 3px;
-		background-color: $White;
-		font-family: "Titillium Web";
-	}
+	width: 92%;
+	height: 2020px;
+	position: absolute;
+	left: 16px;
+	top: 136px;
+	box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+	border-radius: 3px;
+	background-color: $White;
+	font-family: "Titillium Web";
 
 	&__main-heading-div {
 		display: flex;
@@ -19,32 +17,367 @@
 	}
 
 	&__main-heading {
-		font-size: 30px;
+		font-size: 28px;
 		position: relative;
-		// right: 65px;
+		right: 25px;
+		top: 3px;
 	}
 
 	&__edit {
 		position: relative;
-		top: 52px;
+		top: 38px;
 		width: 30px;
 		height: 30px;
 		background: $White;
-		// background-color: blue;
 		border-radius: 50%;
 	}
 
 	&-arrow {
 		position: relative;
-		top: 48px;
+		top: 38px;
 	}
 
 	&--warehouse-heading {
-		font-family: "Titillium Web";
-		font-style: normal;
 		font-weight: 600;
 		font-size: 11px;
 		line-height: 16px;
 		color: $Slate;
+		margin-bottom: 5px;
+	}
+	.warehouse__info-div {
+		position: relative;
+		bottom: 10px;
+	}
+	.warehouse__info-flex {
+		display: flex;
+		justify-content: space-around;
+		margin-left: 10px;
+	}
+
+	.warehouse__info-data {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 20px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	.inventory_item {
+		color: $Instock-Indigo;
+	}
+
+	.warehouse__address {
+		margin-left: 25px;
+		margin-bottom: 20px;
+	}
+
+	.warehouse-itemlist__sub-heading {
+		font-family: "Titillium Web";
+		font-style: normal;
+		font-weight: 600;
+		color: $Slate;
+		font-size: 11px;
+		margin-bottom: 5px;
+		margin-top: 8px;
+	}
+
+	.warehouse-itemlist-flex {
+		display: flex;
+		justify-content: space-around;
+		margin-left: -10px;
+	}
+
+	.warehouse-itemlist__sub-data {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 20px;
+		margin-top: 0px;
+	}
+
+	.status {
+		width: 88px;
+		height: 24px;
+		background: rgba(21, 132, 99, 0.07);
+		border-radius: 20px;
+		padding-left: 10px;
+		padding-bottom: 0px;
+		text-transform: uppercase;
+	}
+
+	.warehouse-itemlist-buttons {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 65vw;
+		margin-left: -15px;
+	}
+
+	.warehouse__itemslist__headings {
+		display: none;
+	}
+	.hr {
+		display: none;
+	}
+
+	.delete {
+		margin: 0px;
+	}
+
+	.editbutton {
+		margin: 0px;
+	}
+
+	.inventory__item-name {
+		text-decoration: none;
+		display: flex;
+	}
+
+	.warehouse-itemlist__right-arrow {
+		margin-top: -10px;
+	}
+
+	.inventory__qty {
+		margin-top: 19px;
+	}
+
+	@include tablet {
+		position: absolute;
+		left: 34px;
+		top: 95px;
+		width: 92%;
+		height: 1110px;
+
+		&__main-heading {
+			position: relative;
+			top: -35px;
+			left: -200px;
+		}
+
+		&__edit {
+			position: relative;
+			top: 0px;
+			left: 15px;
+		}
+
+		&-arrow {
+			position: relative;
+			top: 0px;
+			left: -50px;
+		}
+
+		.warehouse__address {
+			position: absolute;
+			top: -30px;
+			left: 10px;
+			width: 140px;
+		}
+
+		.warehouse__contact-name {
+			position: absolute;
+			top: -30px;
+			left: 330px;
+		}
+
+		.warehouse__contact-number {
+			position: absolute;
+			top: -30px;
+			left: 500px;
+		}
+
+		.warehouse__itemslist__headings {
+			display: inherit;
+			position: absolute;
+			width: 704px;
+			height: 40px;
+			top: 195px;
+			left: 32px;
+			display: flex;
+			gap: 82.5px;
+			font-family: "Titillium Web";
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+		}
+
+		.warehouse__itemslist__heading-div {
+			top: 100px;
+			display: inherit;
+			background: rgba(236, 233, 233, 0.5);
+			position: relative;
+			width: 100%;
+			height: 40px;
+			top: 195px;
+		}
+
+		.hr {
+			display: inherit;
+			position: relative;
+			top: -38px;
+		}
+		.inventory {
+			position: relative;
+			top: 90px;
+		}
+
+		.inventory__item-name {
+			position: absolute;
+			left: 30px;
+			top: 20px;
+		}
+
+		.inventory__item-catergory {
+			position: absolute;
+			left: 180px;
+			top: 20px;
+		}
+
+		.inventory__item-status {
+			position: absolute;
+			left: 310px;
+			top: 20px;
+		}
+
+		.inventory__item-qty {
+			position: absolute;
+			left: 465px;
+			top: 20px;
+		}
+
+		.warehouse-itemlist-buttons {
+			width: 10px;
+			position: relative;
+			top: 90px;
+			display: flex;
+			gap: 20px;
+			margin-left: 600px;
+		}
+
+		.inventory__linebreak {
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		.delete {
+			margin: 0px;
+		}
+
+		.editbutton {
+			margin: 0px;
+		}
+
+		.warehouse__itemslist--address {
+			position: relative;
+			left: -23px;
+		}
+
+		.warehouse__itemslist--cname {
+			position: relative;
+			left: -25px;
+		}
+	}
+
+	@include desktop {
+		width: 80%;
+		height: 1090px;
+		margin-left: 100px;
+
+		&__main-heading {
+			position: relative;
+			left: -380px;
+		}
+
+		&__edit {
+			position: relative;
+			left: 50px;
+		}
+		&-arrow {
+			position: relative;
+			left: -110px;
+		}
+
+		.warehouse__address {
+			position: absolute;
+			left: 25px;
+		}
+
+		.warehouse__contact-name {
+			position: absolute;
+			left: 590px;
+		}
+
+		.warehouse__contact-number {
+			position: absolute;
+			left: 830px;
+		}
+
+		.warehouse__itemslist__headings {
+			top: 192.5px;
+			left: 50px;
+			gap: 100px;
+		}
+
+		.warehouse__itemslist__heading-div {
+			top: 192.5px;
+		}
+
+		.warehouse__itemslist--address {
+			position: relative;
+			left: 60px;
+		}
+		.warehouse__itemslist--cname {
+			position: relative;
+			left: 130px;
+		}
+		.warehouse__itemslist--actions {
+			position: relative;
+			left: 280px;
+		}
+		.warehouse__itemslist--cinformation {
+			position: relative;
+			left: 270px;
+		}
+
+		.hr {
+			display: inherit;
+			position: relative;
+			top: -41px;
+		}
+		.inventory {
+			position: relative;
+			top: 70px;
+		}
+
+		.inventory__item-name {
+			position: absolute;
+			left: 50px;
+		}
+
+		.inventory__item-catergory {
+			position: absolute;
+			left: 300px;
+		}
+
+		.inventory__item-status {
+			position: absolute;
+			left: 520px;
+		}
+
+		.inventory__item-qty {
+			position: absolute;
+			left: 805px;
+		}
+
+		.warehouse-itemlist-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 25px;
+			margin-left: 970px;
+			margin-right: 0px;
+			position: relative;
+			top: 73px;
+		}
+
+		.inventory__item-name {
+			text-decoration: none;
+		}
 	}
 }

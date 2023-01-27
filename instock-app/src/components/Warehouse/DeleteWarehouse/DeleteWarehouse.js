@@ -4,27 +4,27 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import './DeleteWarehouse.scss'
+import "./DeleteWarehouse.scss";
 
 function DeleteWarehouse() {
 	let navigate = useNavigate();
 	let { warehouseId } = useParams();
-	const [warehouseName, setWarehouseName] = useState('')
+	const [warehouseName, setWarehouseName] = useState("");
 
 	useEffect(() => {
 		getWarehouseName(warehouseId);
-	  });
+	});
 
 	const getWarehouseName = (warehouseId) => {
-		axios.get(`http://localhost:3030/warehouse/${warehouseId}`)
-		.then(res => {
-			setWarehouseName(res.data.name)
-		})
-	}
- 
+		axios
+			.get(`http://localhost:3030/warehouse/${warehouseId}`)
+			.then((res) => {
+				setWarehouseName(res.data.name);
+			});
+	};
+
 	const deletewarehouse = async (warehouseId) => {
 		await axios.delete(`http://localhost:3030/warehouse/${warehouseId}`);
-		// loadwarehouse();
 		navigate("/");
 	};
 
@@ -33,8 +33,9 @@ function DeleteWarehouse() {
 			<div className="delete-modal-container__text">
 				<h2>Delete {warehouseName} Warehouse?</h2>
 				<p>
-					Please confirm that you'd like to delete the {warehouseName} from the list of
-					warehouses. You won't be able to undo this action.
+					Please confirm that you'd like to delete the {warehouseName}{" "}
+					from the list of warehouses. You won't be able to undo this
+					action.
 				</p>
 			</div>
 			<div className="delete-modal-container__buttons">
@@ -47,7 +48,9 @@ function DeleteWarehouse() {
 						deletewarehouse(warehouseId);
 					}}
 				>
-					<button className="button-delete-modal button-colored">Delete</button>
+					<button className="button-delete-modal button-colored">
+						Delete
+					</button>
 				</Link>
 			</div>
 		</div>

@@ -1,13 +1,10 @@
 import Search from "./Search/Search";
 import "./WarehouseList.scss";
 import Buttons from "../Buttons/EditButton/EditButton";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import EditButton from "../Buttons/EditButton/EditButton";
 import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import RightArrow from "../../../assets/icons/chevron_right-24px.svg";
-import { useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 
 function WarehouseList(props) {
 	const title = props.title;
@@ -34,7 +31,7 @@ function WarehouseList(props) {
 									<h3 className="warehouse-list__sub-heading warehouse-list__warehouse-heading">
 										WAREHOUSE
 									</h3>
-									<Link
+									<NavLink
 										to={`/warehouse/${list.id}`}
 										className="warehouse-list__link"
 									>
@@ -45,7 +42,7 @@ function WarehouseList(props) {
 											className="warehouse-list__right-arrow"
 											src={RightArrow}
 										></img>
-									</Link>
+									</NavLink>
 									<h3 className="warehouse-list__sub-heading warehouse-list__address-heading">
 										ADDRESS
 									</h3>
@@ -76,7 +73,10 @@ function WarehouseList(props) {
 								<p className="warehouse-list__sub-heading  warehouse-list__buttons-heading">
 									ACTIONS
 								</p>
-								<Link to={`/warehouse/delete/${list.id}`}>
+								<Link
+									className="delete"
+									to={`/warehouse/delete/${list.id}`}
+								>
 									<DeleteButton />
 								</Link>
 
