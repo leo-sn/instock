@@ -2,11 +2,10 @@
 
 .warehouse-list {
 	@include mobile {
-		width: 93%;
-		height: 100%;
+		width: 90%;
+		height: 1700px;
 		position: absolute;
 		left: 16px;
-		// right: 16px;
 		top: 136px;
 		box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 		border-radius: 3px;
@@ -28,8 +27,8 @@
 		&__list {
 			font-family: "Titillium Web";
 			display: flex;
-			gap: 150px;
-			margin-left: 30px;
+			gap: 5vw;
+			margin-left: 20px;
 		}
 
 		&__sub-heading {
@@ -51,7 +50,7 @@
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 400;
-			font-size: 13px;
+			font-size: 12px;
 			line-height: 20px;
 			color: $Instock-Black;
 			margin-top: 0px;
@@ -80,8 +79,8 @@
 		}
 
 		&__link {
-			display: flex;
 			text-decoration: none;
+			display: flex;
 		}
 
 		&__address-heading {
@@ -99,8 +98,9 @@
 
 		&-buttons {
 			display: flex;
-			gap: 120px;
+			justify-content: space-between;
 			margin-left: 10px;
+			margin-right: 20px;
 		}
 
 		&__buttons-heading {
@@ -108,17 +108,15 @@
 		}
 	}
 	@include tablet {
-		height: 120vh;
+		height: 920px;
+		width: 90%;
 		position: absolute;
 		top: 92px;
-		left: 32px;
+		left: 40px;
 
 		&__right-arrow {
 			margin-top: -3px;
-			margin-left: 60px;
-		}
-		&__link {
-			width: 10px;
+			padding-left: 70px;
 		}
 
 		&__div {
@@ -127,10 +125,12 @@
 		}
 
 		&-buttons {
+			width: 10px;
 			display: flex;
-			gap: 0px;
+			justify-content: space-between;
+			gap: 20px;
 			position: relative;
-			left: 70px;
+			margin-left: 600px;
 			bottom: 20px;
 		}
 
@@ -142,7 +142,7 @@
 			top: 95px;
 			left: 32px;
 			display: flex;
-			gap: 82.5px;
+			justify-content: space-between;
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 600;
@@ -160,10 +160,10 @@
 		}
 
 		&__address {
-			position: absolute;
-			left: 180px;
-			top: 25px;
-			width: 110px;
+			margin-left: 100px;
+			position: relative;
+			top: -22px;
+			width: 130px;
 			font-family: "Titillium Web";
 			font-style: normal;
 			font-weight: 400;
@@ -173,7 +173,7 @@
 
 		&__email {
 			position: absolute;
-			left: 475px;
+			left: 450px;
 			top: 50px;
 			font-size: 13.4px;
 			line-height: 22px;
@@ -181,7 +181,7 @@
 
 		&__contact {
 			position: absolute;
-			left: 475px;
+			left: 450px;
 			top: 28px;
 			font-size: 13.4px;
 			line-height: 22px;
@@ -194,8 +194,8 @@
 			font-size: 13.4px;
 			line-height: 22px;
 			position: absolute;
-			left: 320px;
-			top: 40px;
+			left: 300px;
+			top: 36px;
 		}
 
 		&__sub-heading {
@@ -219,16 +219,34 @@
 			padding-top: 26px;
 			height: 25px;
 		}
+
+		&--address {
+			position: relative;
+			left: -30px;
+		}
+		&__address {
+			position: relative;
+			left: 35px;
+		}
+		&--cname {
+			position: relative;
+			left: -10px;
+		}
+		&--cinformation {
+			position: relative;
+			left: -30px;
+		}
+		&--actions {
+			position: relative;
+			left: -60px;
+		}
 	}
 
 	@include desktop {
-		height: 114vh;
+		height: 930px;
+		width: 81%;
 		position: absolute;
-		top: 92px;
 		left: 130px;
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
 
 		&__headings {
 			position: absolute;
@@ -246,57 +264,62 @@
 		}
 		&--address {
 			position: relative;
-			left: 140px;
+			left: 110px;
 		}
 		&--cname {
 			position: relative;
-			left: 250px;
+			left: 200px;
 		}
 		&--cinformation {
 			position: relative;
-			left: 360px;
+			left: 210px;
 		}
 		&--actions {
 			position: relative;
-			left: 470px;
+			left: 280px;
 		}
 
 		&__name {
 			position: relative;
 			left: 20px;
 			font-size: 14px;
-			// width: 1000px;
 		}
 		&__address {
 			position: absolute;
-			left: 330px;
+			left: 200px;
+			top: 24px;
 			font-size: 14px;
 		}
 
 		&__contact-name {
-			position: relative;
-			left: 385px;
-			top: 30px;
+			position: absolute;
+			left: 520px;
+			top: 25px;
 		}
 
 		&__contact {
 			position: absolute;
-			left: 850px;
+			top: 24px;
+			left: 700px;
 		}
 
 		&__email {
 			position: absolute;
-			left: 850px;
+			left: 700px;
+			top: 45px;
 		}
 
 		&-buttons {
-			position: relative;
-			left: 545px;
+			margin-left: 950px;
 		}
 
 		&__div {
 			position: relative;
 			top: 90px;
+		}
+
+		&__right-arrow {
+			padding-left: 20px;
 		}
 	}
 }

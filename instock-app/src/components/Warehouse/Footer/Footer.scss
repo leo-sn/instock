@@ -2,11 +2,12 @@
 
 .footer {
 	@include mobile {
-		position: relative;
+		position: absolute;
+		text-align: center;
+		left: 25%;
+		top: 1850px;
 		width: 157px;
 		height: 16px;
-		left: 159px;
-		top: 1860px;
 		font-family: "Titillium Web";
 		font-style: normal;
 		font-weight: 400;
@@ -32,6 +33,5 @@
 		width: 171px;
 		height: 18px;
 		left: 600px;
-		// top: 1050px;
 	}
 }

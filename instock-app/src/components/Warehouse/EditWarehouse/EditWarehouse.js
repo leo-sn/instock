@@ -1,11 +1,11 @@
 import "./EditWarehouse.scss";
 
 import { useState, useEffect } from "react";
-import SaveButton from "../Buttons/SaveButton/SaveButton";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import { useHistory } from "react";
 import { useNavigate } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import BackArrow from "../../../assets/icons/arrow_back-24px.svg";
 
 function EditWarehouse() {
 	let navigate = useNavigate();
@@ -77,105 +77,151 @@ function EditWarehouse() {
 	return (
 		<>
 			<form onSubmit={(e) => onSubmit(e)}>
-				<div className="warehouse-list__item">
-					<h2>Edit Warehouse</h2>
-					<hr></hr>
-					<h3>Warehouse Details</h3>
+				<div className="warehouse__edit">
+					<Link to={`/`} className="warehouse__edit-arrow">
+						<img src={BackArrow}></img>
+					</Link>
+					<h2 className="warehouse__edit-heading">Edit Warehouse</h2>
+					<hr className="linebreak--edit"></hr>
 
-					<label>Warehouse Name</label>
-					<input
-						type="text"
-						required="required"
-						name="name"
-						id="name"
-						// placeholder=""
+					<div className="edit__flex">
+						<div className="warehouse__details">
+							<h3 className="warehouse__edit-sub-heading">
+								Warehouse Details
+							</h3>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Warehouse Name
+								</label>
+								<input
+									className="warehouse__edit-input"
+									type="text"
+									required="required"
+									name="name"
+									id="name"
+									value={warehouse.name}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Street Address
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="address"
+									id="address"
+									value={warehouse.address}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
 
-						value={warehouse.name}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>Street Address</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="address"
-						id="address"
-						// placeholder=""
-						value={warehouse.address}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>City</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="city"
-						id="city"
-						// placeholder=""
-						value={warehouse.city}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>country</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="country"
-						id="country"
-						// placeholder=""
-						value={warehouse.country}
-						onChange={(e) => onInputChange(e)}
-					></input>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									City
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="city"
+									id="city"
+									value={warehouse.city}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Country
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="country"
+									id="country"
+									value={warehouse.country}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+						</div>
 
-					<h3>Contact Details</h3>
+						<div className="contact__details">
+							<h3 className="warehouse__edit-sub-heading">
+								Contact Details
+							</h3>
 
-					<label>Contact Name</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="contactname"
-						id="contactname"
-						// placeholder=""
-						value={warehouse.contactname}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>Position</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="position"
-						id="position"
-						// placeholder=""
-						value={warehouse.position}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>Phone Number</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="phone"
-						id="phone"
-						// placeholder=""
-						value={warehouse.phone}
-						onChange={(e) => onInputChange(e)}
-					></input>
-					<label>Email</label>
-					<input
-						placeholder=""
-						type="text"
-						required="required"
-						name="email"
-						id="email"
-						// placeholder=""
-						value={warehouse.email}
-						onChange={(e) => onInputChange(e)}
-					></input>
-
-					<button>Cancel</button>
-					<SaveButton />
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Contact Name
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="contactname"
+									id="contactname"
+									value={warehouse.contactname}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Position
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="position"
+									id="position"
+									value={warehouse.position}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Phone Number
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="phone"
+									id="phone"
+									value={warehouse.phone}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+							<div className="warehouse__edit__label">
+								<label className="warehouse__edit__label">
+									Email
+								</label>
+								<input
+									className="warehouse__edit-input"
+									placeholder=""
+									type="text"
+									required="required"
+									name="email"
+									id="email"
+									value={warehouse.email}
+									onChange={(e) => onInputChange(e)}
+								></input>
+							</div>
+						</div>
+					</div>
+					<div className="buttons">
+						<button className="buttons__cancel">Cancel</button>
+						<button className="buttons__save">Save</button>
+					</div>
 				</div>
 			</form>
 		</>
