@@ -19,145 +19,147 @@
 }
 //*******************  tablet and desktop   *****************
 .inventory_listitem_td {
-  min-width: 704px;
-  max-width: 1019px;
-  width: 100%;
-  // background-color: red;
-  // height: 605px;
-  font-family: "Titillium Web";
-
-  &__texttitle {
-    position: absolute;
-    // width: 704px;
-    // height: 60px;
-
-    min-width: 704px;
-    max-width: 1019px;
+  display: none;
+  @include tablet {
+    display: flex;
     width: 100%;
-    left: 0px;
-    top: 186px;
-    background: rgba(247, 248, 249, 0.7);
-    display: flex;
-    justify-content: space-evenly;
-  }
-  &__texttitlepair {
-    position: relative;
-    width: 13%;
-    display: flex;
-    justify-content: space-evenly;
-    &--title {
-      position: absolute;
-      left: 0;
-      font-size: 12px;
-      font-family: "Titillium Web";
-    }
-    &--sort {
-      position: absolute;
-      top: 12px;
-      right: 0;
-      width: 15px;
-      height: 15px;
-      font-size: 12px;
-    }
-  }
-  &__texttitlepairsmall {
-    position: relative;
-    width: 11%;
-    display: flex;
-    justify-content: space-evenly;
-    &--title {
-      position: absolute;
-      left: 10px;
-      font-size: 12px;
-      font-family: "Titillium Web";
-    }
-    &--sort {
-      position: absolute;
-      top: 12px;
-      right: 0;
-      width: 15px;
-      height: 15px;
-    }
-  }
+    // background-color: red;
+    // height: 605px;
+    font-family: "Titillium Web";
 
-  &__texttitlepairbig {
-    position: relative;
-    width: 18%;
-    display: flex;
-    justify-content: space-evenly;
-    &--title {
+    &__texttitle {
       position: absolute;
-      left: 0;
-      font-size: 12px;
-      font-family: "Titillium Web";
-    }
-    &--sort {
-      position: absolute;
-      top: 12px;
-      right: 0;
-      width: 15px;
-      height: 15px;
-      //font-size: 12px;
-    }
-  }
+      // width: 704px;
+      // height: 60px;
 
-  &__textcontainer {
-    position: absolute;
-    width: 704px;
-    top: 250px;
-  }
-
-  &__text {
-    border-bottom: 1px solid $Cloud;
-    display: flex;
-    justify-content: space-evenly;
-
-    &--ptagparent {
-      margin-left: -10px;
-      width: 13%;
-      text-align: left;
-    }
-    &--ptag {
-      text-align: left;
-    }
-    &--ptagparentstatus {
-      margin-left: -30px;
-      margin-top: 2%;
-      width: 13%;
+      // min-width: 704px;
+      // max-width: 1019px;
+      width: 100%;
+      left: 0px;
+      top: 186px;
+      background: rgba(247, 248, 249, 0.7);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
     }
-    &--ptagparentbig {
-      margin-left: -30px;
-      width: 18%;
-      text-align: left;
-    }
-    &--ptagbig {
-      text-align: left;
-    }
-    &--ptagparentsmall {
-      width: 11%;
-      text-align: left;
-    }
-    &--ptagsmall {
-      text-align: left;
-    }
-    &__actionButtons {
-      border: 2px dotted magenta;
+    &__texttitlepair {
+      position: relative;
       width: 13%;
       display: flex;
       justify-content: space-evenly;
-      position: relative;
-      &--deletebutton {
+      &--title {
         position: absolute;
         left: 0;
-        top: 20%;
+        font-size: 12px;
+        font-family: "Titillium Web";
       }
-      &--editbutton {
+      &--sort {
         position: absolute;
-        left: 40%;
-        top: 20%;
+        top: 12px;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        font-size: 12px;
+      }
+    }
+    &__texttitlepairsmall {
+      position: relative;
+      width: 11%;
+      display: flex;
+      justify-content: space-evenly;
+      &--title {
+        position: absolute;
+        left: 10px;
+        font-size: 12px;
+        font-family: "Titillium Web";
+      }
+      &--sort {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &__texttitlepairbig {
+      position: relative;
+      width: 18%;
+      display: flex;
+      justify-content: space-evenly;
+      &--title {
+        position: absolute;
+        left: 0;
+        font-size: 12px;
+        font-family: "Titillium Web";
+      }
+      &--sort {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        //font-size: 12px;
+      }
+    }
+
+    &__textcontainer {
+      position: absolute;
+      width: 704px;
+      top: 250px;
+    }
+
+    &__text {
+      border-bottom: 1px solid $Cloud;
+      display: flex;
+      justify-content: space-evenly;
+
+      &--ptagparent {
+        margin-left: -10px;
+        width: 13%;
+        text-align: left;
+      }
+      &--ptag {
+        text-align: left;
+      }
+      &--ptagparentstatus {
+        margin-left: -30px;
+        margin-top: 2%;
+        width: 13%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &--ptagparentbig {
+        margin-left: -30px;
+        width: 18%;
+        text-align: left;
+      }
+      &--ptagbig {
+        text-align: left;
+      }
+      &--ptagparentsmall {
+        width: 11%;
+        text-align: left;
+      }
+      &--ptagsmall {
+        text-align: left;
+      }
+      &__actionButtons {
+        border: 2px dotted magenta;
+        width: 13%;
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        &--deletebutton {
+          position: absolute;
+          left: 0;
+          top: 20%;
+        }
+        &--editbutton {
+          position: absolute;
+          left: 40%;
+          top: 20%;
+        }
       }
     }
   }
@@ -166,134 +168,134 @@
 .inventory_listitem {
   //only for mobile view, hide everything else
 
-  @include mobile {
-    top: 100px;
-    font-family: "titillium web";
-    width: 343px;
-    height: 40vh;
+  //@include mobile {
+  top: 100px;
+  font-family: "titillium web";
+  width: 343px;
+  height: 40vh;
 
-    border-bottom: 1px solid $Cloud;
-    background-color: #fff;
-    /* White */
+  border-bottom: 1px solid $Cloud;
+  background-color: #fff;
+  /* White */
 
-    background: #ffffff;
-    /* Card Shadow */
+  background: #ffffff;
+  /* Card Shadow */
 
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-    border-radius: 3px;
-    &__text {
-      color: $Slate;
-      position: relative;
-      &--action {
-        box-sizing: border-box;
-        position: absolute;
-        top: 30vh;
-        width: 343px;
-        padding-left: 5%;
-        padding-right: 5%;
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-    &__textpair1 {
-      position: absolute;
-
-      top: 5%;
-      left: 5%;
-      &--uppertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1rem;
-      }
-      &--lowertext {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: $Instock-Indigo;
-        line-height: 1.25rem;
-      }
-    }
-    &__textpair2 {
-      position: absolute;
-
-      top: 10vh;
-      left: 5%;
-      &--uppertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1rem;
-      }
-      &--lowertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1.25rem;
-      }
-    }
-    &__textpair3 {
-      position: absolute;
-
-      top: 5%;
-      left: 60%;
-      &--uppertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1rem;
-      }
-      &--lowertext {
-        text-align: center;
-        font-size: 11px;
-        font-weight: 600;
-        line-height: 1.25rem;
-      }
-    }
-    &__textpair4 {
-      position: absolute;
-
-      top: 10vh;
-      left: 60%;
-      &--uppertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1rem;
-      }
-      &--lowertext {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1.25rem;
-      }
-    }
-    &__textpair5 {
-      position: absolute;
-
-      top: 20vh;
-      left: 60%;
-      &--uppertext {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1rem;
-      }
-      &--lowertext {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: $Slate;
-        line-height: 1.25rem;
-      }
-    }
-    &__actionButtons {
-      position: absolute;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  &__text {
+    color: $Slate;
+    position: relative;
+    &--action {
       box-sizing: border-box;
-      left: 0;
+      position: absolute;
       top: 30vh;
-      width: 100%;
-      height: 5vh;
+      width: 343px;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: flex;
+      justify-content: space-between;
     }
   }
+  &__textpair1 {
+    position: absolute;
+
+    top: 5%;
+    left: 5%;
+    &--uppertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1rem;
+    }
+    &--lowertext {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: $Instock-Indigo;
+      line-height: 1.25rem;
+    }
+  }
+  &__textpair2 {
+    position: absolute;
+
+    top: 10vh;
+    left: 5%;
+    &--uppertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1rem;
+    }
+    &--lowertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1.25rem;
+    }
+  }
+  &__textpair3 {
+    position: absolute;
+
+    top: 5%;
+    left: 60%;
+    &--uppertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1rem;
+    }
+    &--lowertext {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.25rem;
+    }
+  }
+  &__textpair4 {
+    position: absolute;
+
+    top: 10vh;
+    left: 60%;
+    &--uppertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1rem;
+    }
+    &--lowertext {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1.25rem;
+    }
+  }
+  &__textpair5 {
+    position: absolute;
+
+    top: 20vh;
+    left: 60%;
+    &--uppertext {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1rem;
+    }
+    &--lowertext {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: $Slate;
+      line-height: 1.25rem;
+    }
+  }
+  &__actionButtons {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 30vh;
+    width: 100%;
+    height: 5vh;
+  }
+  // }
 
   @include tablet {
     display: none;
