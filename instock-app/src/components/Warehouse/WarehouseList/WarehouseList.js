@@ -1,22 +1,21 @@
 import Search from "./Search/Search";
 import "./WarehouseList.scss";
 import Buttons from "../Buttons/EditButton/EditButton";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import EditButton from "../Buttons/EditButton/EditButton";
 import DeleteButton from "../Buttons/DeleteButton/DeleteButton";
 import RightArrow from "../../../assets/icons/chevron_right-24px.svg";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useState } from "react"
-import DeleteWarehouse from '../DeleteWarehouse/DeleteWarehouse'
-
+import { useState } from "react";
+import DeleteWarehouse from "../DeleteWarehouse/DeleteWarehouse";
 
 function WarehouseList(props) {
 	const title = props.title;
 
 	const [modalActive, setModalActive] = useState(false);
-	const [idToDelete, setIdToDelete] = useState('');
+	const [idToDelete, setIdToDelete] = useState("");
 
 	return (
 		<>
@@ -41,7 +40,7 @@ function WarehouseList(props) {
 									<h3 className="warehouse-list__sub-heading warehouse-list__warehouse-heading">
 										WAREHOUSE
 									</h3>
-									<Link
+									<NavLink
 										to={`/warehouse/${list.id}`}
 										className="warehouse-list__link"
 									>
@@ -52,7 +51,7 @@ function WarehouseList(props) {
 											className="warehouse-list__right-arrow"
 											src={RightArrow}
 										></img>
-									</Link>
+									</NavLink>
 									<h3 className="warehouse-list__sub-heading warehouse-list__address-heading">
 										ADDRESS
 									</h3>
@@ -83,16 +82,15 @@ function WarehouseList(props) {
 								<p className="warehouse-list__sub-heading  warehouse-list__buttons-heading">
 									ACTIONS
 								</p>
-								
-								<button className="warehouse-button--delete" 
-										onClick={() => {
-									setModalActive(true)
-									setIdToDelete(list.id)
-								}}>
 
-								</button>
+								<button
+									className="warehouse-button--delete"
+									onClick={() => {
+										setModalActive(true);
+										setIdToDelete(list.id);
+									}}
+								></button>
 								{/* <DeleteButton/> */}
-								
 
 								<Link to={`/warehouse/edit/${list.id}`}>
 									<EditButton />
@@ -103,7 +101,14 @@ function WarehouseList(props) {
 				})}
 			</div>
 
-			{!!modalActive && <div className="modal-active"><DeleteWarehouse setModalActive={setModalActive} idToDelete={idToDelete}/></div>}
+			{!!modalActive && (
+				<div className="modal-active">
+					<DeleteWarehouse
+						setModalActive={setModalActive}
+						idToDelete={idToDelete}
+					/>
+				</div>
+			)}
 		</>
 	);
 }
