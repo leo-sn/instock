@@ -9,6 +9,7 @@ import DetailInventoryItem from "./components/DetailInventoryItem/DetailInventor
 import WarehouseEdit from "./pages/Warehouse/WarehouseEdit";
 import WarehouseDelete from "./pages/Warehouse/WarehouseDelete";
 import WarehouseAdd from "./pages/Warehouse/WarehouseAdd.js";
+import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 
 function App() {
   const { title } = useParams();
@@ -50,6 +51,7 @@ function App() {
             element={<Inventory title={current_title} />}
           />
           <Route path="/inventory/add" element={<AddNewInventoryItemPage />} />
+          <Route path="/inventory/edit" element={<EditInventoryPage />} />
         </Routes>
       </BrowserRouter>
     </>
