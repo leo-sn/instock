@@ -1,13 +1,20 @@
 import "../ListComponent/ListComponent.scss";
-
+import { NavLink, Link } from "react-router-dom";
 import del from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
+import { useState } from "react";
 import "../ListComponent/ListComponent.scss";
 import sort from "../../assets/icons/sort-24px.svg";
+////////////////////////////////////////////////////////
 function InventoryListComponent(props) {
   console.log(props.listitems);
+
+  const [modalActive, setModalActive] = useState(false);
+  const [idToDelete, setIdToDelete] = useState("");
+
   ////MOBILE VIEW REPEATING DIV////
   const inv = props.listitems.map((i) => {
+    console.log(`/warehouse/${i.warehouseID}/inventory/${i.id}`);
     if (i.status == "In Stock") {
       var statusclassmobilelowertext =
         "inventory_listitem__textpair3--lowertext green";
@@ -23,9 +30,11 @@ function InventoryListComponent(props) {
               <h4 className="inventory_listitem__textpair1--uppertext">
                 INVENTORY ITEM
               </h4>
+
               <h3 className="inventory_listitem__textpair1--lowertext">
-                {/* {i.itemName} */}
-                {`${i.itemName} >`}
+                <Link
+                  to={`/warehouse/${i.warehouseID}/inventory/${i.id}`}
+                >{`${i.itemName} >`}</Link>
               </h3>
             </div>
             <div className="inventory_listitem__textpair2">
@@ -57,19 +66,25 @@ function InventoryListComponent(props) {
               </p>
             </div>
             <div className="inventory_listitem__text--action">
-              <a className="inventory_listitem__text--actiondeletebutton">
+              <Link
+                to={`/inventory/delete/${i.id}`}
+                className="inventory_listitem__text--actiondeletebutton"
+              >
                 <img
                   className="inventory_listitem__text--actiondelete"
                   src={del}
                 ></img>
-              </a>
+              </Link>
 
-              <a className="inventory_listitem__text--actioneditbutton">
+              <Link
+                to={`/inventory/edit/${i.id}`}
+                className="inventory_listitem__text--actioneditbutton"
+              >
                 <img
                   className="inventory_listitem__text--actionedit"
                   src={edit}
                 ></img>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

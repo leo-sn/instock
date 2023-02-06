@@ -1,9 +1,70 @@
 import "../EditNewInventoryItem/EditNewInventoryItem.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import InventoryForm from "../InventoryForm/InventoryForm.js";
 
 function EditNewInventoryItem() {
+  let navigate = useNavigate();
+  let { inventoryId } = useParams();
+  console.log(inventoryId);
+
+  const [inventoryitem, setInventory] = useState({
+    warehouseName: "",
+    itemName: "",
+    description: "",
+    category: "",
+    status: "",
+    quantity: "",
+  });
+
+  const onInputChange = (e) => {
+    console.log(e);
+    setInventory({ ...inventoryitem, [e.target.name]: e.target.value });
+  };
+  console.log(inventoryitem);
+
+  useEffect(() => {
+    loadinventory();
+  }, []);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    //add both inputs together
+    const toSubmitData = {
+      warehouseName: inventoryitem.warehouseName,
+      itemName: inventoryitem.itemName,
+      description: inventoryitem.description,
+      category: inventoryitem.category,
+      status: inventoryitem.status,
+      quantity: inventoryitem.quantity,
+    };
+
+    console.log(e);
+    await axios.put(
+      `http://localhost:3030/inventory/${inventoryId}`,
+      toSubmitData
+    );
+    navigate("/");
+  };
+
+  const loadinventory = async () => {
+    const result = await axios.get(
+      `http://localhost:3030/inventory/${inventoryId}`
+    );
+    const inventoryData = {
+      warehouseName: result.data.warehouseName,
+      itemName: result.data.itemName,
+      description: result.data.description,
+      category: result.data.category,
+      status: result.data.status,
+      quantity: result.data.quantity,
+    };
+    setInventory(inventoryData);
+  };
   return (
     <>
       <div className="editinventory">
