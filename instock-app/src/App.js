@@ -53,7 +53,7 @@ function App() {
           />
           <Route path="/inventory/add" element={<AddNewInventoryItemPage />} />
           <Route
-            path="/inventory/edit:inventoryId"
+            path="/inventory/edit/:inventoryId"
             element={<EditInventoryPage />}
           />
           <Route
