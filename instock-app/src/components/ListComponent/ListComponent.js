@@ -5,6 +5,7 @@ import edit from "../../assets/icons/edit-24px.svg";
 import { useState } from "react";
 import "../ListComponent/ListComponent.scss";
 import sort from "../../assets/icons/sort-24px.svg";
+import DeleteInventory from "../DeleteInventoryComp/DeleteInventoryComp";
 ////////////////////////////////////////////////////////
 function InventoryListComponent(props) {
   console.log(props.listitems);
@@ -66,15 +67,18 @@ function InventoryListComponent(props) {
               </p>
             </div>
             <div className="inventory_listitem__text--action">
-              <Link
-                to={`/inventory/delete/${i.id}`}
+              <button
+                onClick={() => {
+                  setModalActive(true);
+                  setIdToDelete(i.id);
+                }}
                 className="inventory_listitem__text--actiondeletebutton"
               >
                 <img
                   className="inventory_listitem__text--actiondelete"
                   src={del}
                 ></img>
-              </Link>
+              </button>
 
               <Link
                 to={`/inventory/edit/${i.id}`}
@@ -88,6 +92,14 @@ function InventoryListComponent(props) {
             </div>
           </div>
         </div>
+        {!!modalActive && (
+          <div className="modal-active">
+            <DeleteInventory
+              setModalActive={setModalActive}
+              idToDelete={idToDelete}
+            />
+          </div>
+        )}
       </>
     );
   });
@@ -201,100 +213,17 @@ function InventoryListComponent(props) {
           </div>
         </div>
         <div className="inventory_listitem_td__textcontainer">{inv_td}</div>
-
-        {/* SAMPLE ON CLICK FOR TD VIEW        <div className="inventory_listitem_td__actionButtons">
-          <a
-            onClick={() => {
-              deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-            }}
-            className="inventory_listitem_td__actionButtons--deletebutton"
-          >
-            <img
-              className="inventory_listitem_td__actionButtons--delete"
-              src={del}
-            ></img>
-          </a>
-          <a
-            onClick={() => {
-              editInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-            }}
-            className="inventory_listitem_td__actionButtons--editbutton"
-          >
-            <img
-              className="inventory_listitem_td__actionButtons--edit"
-              src={edit}
-            ></img>
-          </a>
-        </div> */}
       </div>
 
-      {/* ARCHIVED MOBILE PART    <div className="inventory_listitem">
-        <div className="inventory_listitem__text">
-          <div className="inventory_listitem__textpair1">
-            <h4 className="inventory_listitem__textpair1--uppertext">
-              INVENTORY ITEM
-            </h4>
-            <h3 className="inventory_listitem__textpair1--lowertext">
-              someitemname
-            </h3>
-          </div>
-          <div className="inventory_listitem__textpair2">
-            <h4 className="inventory_listitem__textpair2--uppertext">
-              CATEGORY
-            </h4>
-            <p className="inventory_listitem__textpair2--lowertext">
-              Placeholder1_category
-            </p>
-          </div>
-          <div className="inventory_listitem__textpair3">
-            <h4 className="inventory_listitem__textpair3--uppertext">STATUS</h4>
-            <p className="inventory_listitem__textpair3--lowertext">
-              Placeholder1_status
-            </p>
-          </div>
-          <div className="inventory_listitem__textpair4">
-            <h4 className="inventory_listitem__textpair4--uppertext">QTY</h4>
-            <p className="inventory_listitem__textpair4--lowertext">
-              Placeholder1_qty
-            </p>
-          </div>
-          <div className="inventory_listitem__textpair5">
-            <h4 className="inventory_listitem__textpair5--uppertext">
-              WAREHOUSE
-            </h4>
-            <p className="inventory_listitem__textpair5--lowertext">
-              Placeholder1_warehouse
-            </p>
-          </div>
-        </div>
-
-        <div className="inventory_listitem__actionButtons">
-          <a
-            onClick={() => {
-              deleteInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-            }}
-            className="inventory_listitem__actionButtons--deletebutton"
-          >
-            <img
-              className="inventory_listitem_td__actionButtons--delete"
-              src={del}
-            ></img>
-          </a>
-
-          <a
-            onClick={() => {
-              editInventoryItem("83433026-ca32-4c6d-bd86-a39ee8b7303e");
-            }}
-            className="inventory_listitem__actionButtons--editbutton"
-          >
-            <img
-              className="inventory_listitem__actionButtons--edit"
-              src={edit}
-            ></img>
-          </a>
-        </div>
-      </div> */}
       <div classname="mobilecontainer"> {inv}</div>
+      {!!modalActive && (
+        <div className="modal-active">
+          <DeleteInventory
+            setModalActive={setModalActive}
+            idToDelete={idToDelete}
+          />
+        </div>
+      )}
     </>
   );
 }

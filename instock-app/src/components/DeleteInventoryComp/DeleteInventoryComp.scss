@@ -5,6 +5,7 @@
 }
 
 .delete-modal-container {
+  border: 1px solid $Cloud;
   display: flex;
   flex-direction: column;
 
@@ -15,7 +16,7 @@
   padding: 20px 50px;
 
   position: absolute;
-  top: 0;
+  top: 30%;
   left: 0;
   min-width: calc(100vw - 110px);
   min-height: calc(100vh - 50px);
