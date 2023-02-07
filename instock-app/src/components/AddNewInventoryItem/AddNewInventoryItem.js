@@ -1,6 +1,8 @@
 import "../AddNewInventoryItem/AddNewInventoryItem.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
-//import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 import "../AddNewInventoryItem/AddNewInventoryItem.scss";
 import dropdownarrow2 from "../../assets/icons/arrow_drop_down-24px 2.svg";
 // import { Component } from "react-router-dom";
@@ -46,85 +48,116 @@ function AddNewInventoryItem(props) {
     setStockStatus(event.target.value);
   };
 
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    // console.log("TESTING THE ON SUBMIT HANDLE SUBMIT FUNCTION");
+    // alert("I am in the submit of form");
+
+    const toSubmitData = {
+      warehouseName: e.target.warehouseName.value,
+      itemName: e.target.itemName.value,
+      description: e.target.description.value,
+      category: e.target.category.value,
+      status: e.target.status.value,
+      quantity: e.target.quantity.value,
+    };
+    // console.log(toSubmitData);
+    //console.log(e);
+    axios.put(`http://localhost:3030/inventory`, toSubmitData);
+  }
+
   return (
     <>
       <div className="addinventory">
         <div className="addinventory__header">
-          <img
-            src={backarrow}
-            className="addinventory__header--backarrow"
-            alt="backarrow"
-          ></img>
+          <Link to={`/inventory`}>
+            <img
+              src={backarrow}
+              className="addinventory__header--backarrow"
+              alt="backarrow"
+            ></img>
+          </Link>
           <h1 className="addinventory__header--title">
             ADD NEW INVENTORY ITEM
           </h1>
         </div>
-        <div className="addinventory__formbody">
-          <form className="addinventory__form1">
-            <label className="addinventory__form1--label">Item Name</label>
-            <input
-              placeholder="Item Name"
-              className="addinventory__form1--input"
-            ></input>
-            <label className="addinventory__form1--label">Description</label>
-            <input
-              placeholder="Please enter a brief item description"
-              className="addinventory__form1--inputdesc"
-            ></input>
+        <form onSubmit={handleFormSubmit} className="addinventory__formbody">
+          <div className="addinventory__form">
+            <div className="addinventory__form1">
+              <label className="addinventory__form1--label">Item Name</label>
+              <input
+                placeholder="Item Name"
+                name="itemName"
+                className="addinventory__form1--input"
+              ></input>
+              <label className="addinventory__form1--label">Description</label>
+              <input
+                placeholder="Please enter a brief item description"
+                name="description"
+                className="addinventory__form1--inputdesc"
+              ></input>
 
-            <label className="addinventory__form1--label">Category</label>
-            <Select
-              options={cat_val_label}
-              className="addinventory__form1--test"
-            />
-            {/* <input
+              <label className="addinventory__form1--label">Category</label>
+              <Select
+                name="category"
+                options={cat_val_label}
+                className="addinventory__form1--test"
+              />
+              {/* <input
               placeholder="Please select"
               className="addinventory__form1--input"
             ></input> */}
-          </form>
-          <form className="addinventory__form2">
-            <div className="addinventory__form2--status">
-              <div className="addinventory__form2--radiobuttons">
-                <label className="addinventory__form2--label">Status</label>
-                <br></br>
-                <input
-                  type="radio"
-                  id="radbuttoninstock"
-                  name="rad1"
-                  value={"In Stock"}
-                  checked={stockstatus === "In Stock"}
-                  onChange={handleChange}
-                ></input>
-                 <label for="html">In Stock</label>
-                <input
-                  type="radio"
-                  id="radbuttonoutstock"
-                  name="rad2"
-                  value={"Out of Stock"}
-                  checked={stockstatus === "Out of Stock"}
-                  onChange={handleChange}
-                ></input>
-                 <label for="html">Out of Stock</label>
+            </div>
+            <div className="addinventory__form2">
+              <div className="addinventory__form2--status">
+                <div className="addinventory__form2--radiobuttons">
+                  <label className="addinventory__form2--label">Status</label>
+                  <br></br>
+                  <input
+                    type="radio"
+                    id="radbuttoninstock"
+                    name="status"
+                    value={"In Stock"}
+                    checked={stockstatus === "In Stock"}
+                    onChange={handleChange}
+                  ></input>
+                   <label for="html">In Stock</label>
+                  <input
+                    type="radio"
+                    id="radbuttonoutstock"
+                    name="status"
+                    value={"Out of Stock"}
+                    checked={stockstatus === "Out of Stock"}
+                    onChange={handleChange}
+                  ></input>
+                   <label for="html">Out of Stock</label>
+                </div>
+              </div>
+              <label className="addinventory__form2--label">Quantity</label>
+              <input
+                placeholder="0"
+                name="quantity"
+                className="addinventory__form2--input"
+              ></input>
+              <div className="addinventory__form2--labelinputpair">
+                <label className="addinventory__form2--label">Warehouse</label>
+                <Select
+                  name="warehouseName"
+                  options={warehouse_val_label}
+                  className="addinventory__form2--test"
+                />
               </div>
             </div>
-            <label className="addinventory__form2--label">Quantity</label>
-            <input
-              placeholder="0"
-              className="addinventory__form2--input"
-            ></input>
-            <div className="addinventory__form2--labelinputpair">
-              <label className="addinventory__form2--label">Warehouse</label>
-              <Select
-                options={warehouse_val_label}
-                className="addinventory__form2--test"
-              />
-            </div>
-          </form>
-        </div>
-        <div className="addinventory__footer">
-          <button className="addinventory__footer--button1">Cancel</button>
-          <button className="addinventory__footer--button2">+ Add Item</button>
-        </div>
+          </div>
+          <div className="addinventory__footer">
+            <Link to={`/inventory`}>
+              <button className="addinventory__footer--button1">Cancel</button>
+            </Link>
+            <button type="submit" className="addinventory__footer--button2">
+              + Add Item
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );

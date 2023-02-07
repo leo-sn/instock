@@ -28,20 +28,24 @@ function DetailInventoryItem() {
     <>
       <div className="detailinventoryitem">
         <div className="detailinventoryitem__header">
-          <img
-            src={backarrow}
-            className="detailinventoryitem__header--backbutton"
-          ></img>
+          <Link to={`/inventory`}>
+            <img
+              src={backarrow}
+              className="detailinventoryitem__header--backbutton"
+            ></img>
+          </Link>
           <h1 className="detailinventoryitem__header--title">
             {itemdetail.itemName}
           </h1>
-          <button className="detailinventoryitem__header--editbutton">
-            <img
-              src={edit}
-              className="detailinventoryitem__header--editbuttonimg"
-            ></img>
-            Edit
-          </button>
+          <Link to={`/inventory`}>
+            <button className="detailinventoryitem__header--editbutton">
+              <img
+                src={edit}
+                className="detailinventoryitem__header--editbuttonimg"
+              ></img>
+              Edit
+            </button>
+          </Link>
         </div>
         <div className="detailinventoryitem__itemdetailmobile">
           <div className="detailinventoryitem__itemdetailmobile--1">

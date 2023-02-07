@@ -10,11 +10,11 @@
   }
   &__itemdetailtd {
     display: none;
-    background-color: cyan;
+    // background-color: cyan;
   }
   &__itemdetailtd1 {
     display: none;
-    border: 2px dotted magenta;
+    // border: 2px dotted magenta;
   }
   &__header {
     border-bottom: 1px solid $Cloud;
@@ -52,7 +52,7 @@
   }
   @include tablet {
     &__header {
-      background-color: orange;
+      // background-color: orange;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -61,7 +61,7 @@
         margin-right: 5vw;
         width: 81px;
         height: 38px;
-        background: pink;
+        // background: pink;
         border-radius: 20px;
         border: none;
         color: white;
@@ -73,16 +73,16 @@
       }
       &--editbuttonimg {
         background-color: none;
-        color: aqua;
+        // color: aqua;
       }
     }
     &__itemdetailmobile {
       display: none;
-      color: purple;
+      color: $Instock-Black;
     }
     &__itemdetailtd {
       display: flex;
-      background-color: cyan;
+      // background-color: cyan;
     }
     &__itemdetailtd1 {
       display: flex;
@@ -92,22 +92,38 @@
     }
     &__itemdetailtdcontent {
       display: flex;
+      position: relative;
       &--desc {
-        border: 2px solid green;
+        // border: 2px solid green;
+        position: absolute;
+        top: 10%;
+        left: 5%;
       }
       &--cat {
-        border: 2px solid green;
+        position: absolute;
+        // border: 2px solid green;
+        top: 30vh;
+        left: 5%;
       }
       &--status {
-        border: 2px solid green;
+        position: absolute;
+        top: 20vh;
+        left: 30%;
+        // border: 2px solid green;
       }
       &--quantity {
-        border: 2px solid green;
+        position: absolute;
+        top: 40vh;
+        left: 30%;
+        // border: 2px solid green;
       }
       &--warehouse {
-        border: 2px solid green;
+        position: absolute;
+        top: 50vh;
+        left: 30%;
+        // border: 2px solid green;
       }
-      color: orange;
+
       font-size: 24px;
     }
   }

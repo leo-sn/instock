@@ -1,0 +1,120 @@
+@import "../../../App.scss";
+
+.search {
+  @include mobile {
+    color: $Instock-Black;
+    font-family: "Titillium Web";
+    position: relative;
+    width: 150px;
+    height: 36px;
+    left: 20px;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+
+    &__input {
+      font-family: "Titillium Web";
+      padding-left: 16px;
+      font-size: 15px;
+      color: $Slate;
+      background-color: $White;
+      box-sizing: border-box;
+      position: relative;
+      width: 89%;
+      margin-bottom: 20px;
+      height: 40px;
+      left: 20px;
+      border: 1px solid $Cloud;
+      border-radius: 20px;
+      background-image: url(../../../../assets/icons/search-24px.svg);
+      background-repeat: no-repeat;
+      background-size: 27px;
+      background-position-x: 103vw;
+      background-position-y: center;
+    }
+
+    &__button--add {
+      border: 1px solid $Instock-Indigo;
+      border-radius: 20px;
+      width: 89%;
+      height: 40px;
+      font-family: "Titillium Web";
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 20px;
+      color: $White;
+      background: $Instock-Indigo;
+      position: relative;
+      left: 20px;
+    }
+  }
+
+  @include tablet {
+    position: absolute;
+    width: 171px;
+    height: 40px;
+    left: 40px;
+    top: 5px;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+
+    &__input {
+      font-size: 14px;
+      box-sizing: border-box;
+      position: absolute;
+      width: 185px;
+      height: 38px;
+      left: 300px;
+      top: 35px;
+      background-size: 23px;
+      background-position-x: 150px;
+    }
+
+    &__button--add {
+      font-size: 13px;
+      line-height: 22px;
+      padding: 8px 12px;
+      gap: 10px;
+      position: absolute;
+      width: 168px;
+      height: 38px;
+      left: 500px;
+      top: 35px;
+    }
+  }
+
+  @include desktop {
+    width: 171px;
+    height: 40px;
+
+    &__input {
+      font-size: 14.5px;
+      position: absolute;
+      width: 274px;
+      height: 38px;
+      left: 580px;
+      top: 40px;
+      background-size: 23px;
+      background-position-x: 235px;
+    }
+
+    &__button--add {
+      width: 168px;
+      height: 38px;
+      font-size: 13.5px;
+      line-height: 20px;
+      color: $White;
+      background: $Instock-Indigo;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 8px 15px;
+      gap: 10px;
+      position: absolute;
+      left: 870px;
+      top: 40px;
+    }
+  }
+}

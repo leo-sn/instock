@@ -2,7 +2,7 @@ import "../InventoryPage/InventoryPage.scss";
 import ListComponent from "../ListComponent/ListComponent.js";
 import { useState, useEffect } from "react";
 //import inventory_listitems from "../../assets/datatest/inventories.json"; //local test data
-import Search from "../Warehouse/WarehouseList/Search/Search.js";
+import SearchInventory from "../SearchInventory/SearchInventory";
 //import DeleteInventoryItem from "../../components/InventoryDeleteModal/InventoryDeleteModal.js";
 
 function InventoryPage(props) {
@@ -30,7 +30,7 @@ function InventoryPage(props) {
   return (
     <>
       <div className="page_box">
-        <Search title={title} />
+        <SearchInventory />
         <ListComponent listitems={listitems} />
         {/* <DeleteInventoryItem deleteitem={delid} /> */}
       </div>

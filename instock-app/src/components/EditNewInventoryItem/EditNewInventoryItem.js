@@ -2,7 +2,7 @@ import "../EditNewInventoryItem/EditNewInventoryItem.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import InventoryForm from "../InventoryForm/InventoryForm.js";
@@ -94,11 +94,13 @@ function EditNewInventoryItem(props) {
     <>
       <form className="addinventory">
         <div className="addinventory__header">
-          <img
-            src={backarrow}
-            className="addinventory__header--backarrow"
-            alt="backarrow"
-          ></img>
+          <Link to={`/inventory`}>
+            <img
+              src={backarrow}
+              className="addinventory__header--backarrow"
+              alt="backarrow"
+            ></img>
+          </Link>
           <h1 className="addinventory__header--title">EDIT INVENTORY ITEM</h1>
         </div>
         <div className="addinventory__formbody">
@@ -173,7 +175,9 @@ function EditNewInventoryItem(props) {
           </div>
         </div>
         <div className="addinventory__footer">
-          <button className="addinventory__footer--button1">Cancel</button>
+          <Link to={`/inventory`}>
+            <button className="addinventory__footer--button1">Cancel</button>
+          </Link>
 
           <button type="submit" className="addinventory__footer--button2">
             + Edit Item

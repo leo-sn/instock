@@ -122,7 +122,11 @@ function InventoryListComponent(props) {
     return (
       <div key={i.id} className="inventory_listitem_td__text">
         <div className="inventory_listitem_td__text--ptagparentbig">
-          <p className="inventory_listitem_td__text--ptagbig">{i.itemName}</p>
+          <Link to={`/warehouse/${i.warehouseID}/inventory/${i.id}`}>
+            <p className="inventory_listitem_td__text--ptagbig">
+              {`i.itemName >`}
+            </p>
+          </Link>
         </div>
         <div className="inventory_listitem_td__text--ptagparent">
           <p className="inventory_listitem_td__text--ptag">{i.category}</p>
@@ -139,18 +143,28 @@ function InventoryListComponent(props) {
           </p>
         </div>
         <div className="inventory_listitem_td__actionButtons">
-          <a className="inventory_listitem_td__actionButtons--deletebutton">
+          <button
+            onClick={() => {
+              setModalActive(true);
+              setIdToDelete(i.id);
+            }}
+            className="inventory_listitem_td__actionButtons--deletebutton"
+          >
             <img
               className="inventory_listitem_td__actionButtons--delete"
               src={del}
             ></img>
-          </a>
-          <a className="inventory_listitem_td__actionButtons--editbutton">
+          </button>
+
+          <Link
+            to={`/inventory/edit/${i.id}`}
+            className="inventory_listitem_td__actionButtons--editbutton"
+          >
             <img
               className="inventory_listitem_td__actionButtons--edit"
               src={edit}
             ></img>
-          </a>
+          </Link>
         </div>
       </div>
     );
